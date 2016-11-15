@@ -1,6 +1,5 @@
 package com.database.project.eventManagmentSystem.event;
 
-import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.joda.time.LocalTime;
 
