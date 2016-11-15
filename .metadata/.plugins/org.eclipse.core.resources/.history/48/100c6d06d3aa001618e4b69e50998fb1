@@ -1,0 +1,11 @@
+package com.database.project.eventManagmentSystem;
+
+public class Admin extends Participant {
+	
+	private int id;
+	
+	public Admin(int id){
+		super(id);
+	}
+
+}

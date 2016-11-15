@@ -1,0 +1,5 @@
+package com.database.project.eventManagmentSystem;
+
+public class Participant {
+	
+}
