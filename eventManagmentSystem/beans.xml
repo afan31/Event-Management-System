@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="participant"
-		class="com.database.project.eventManagmentSystem.Participant">
+		class="com.database.project.eventManagmentSystem.user.Participant">
 		<constructor-arg value="1" name="id"></constructor-arg>
 		<constructor-arg value="Afan" name="name"></constructor-arg>
 		<property name="email" value="afan@gmail.com"></property>
@@ -14,7 +14,7 @@
 	</bean>
 
 
-	<bean id="admin" class="com.database.project.eventManagmentSystem.Admin">
+	<bean id="admin" class="com.database.project.eventManagmentSystem.user.Admin">
 		<constructor-arg name="id" value="1"></constructor-arg>
 		<constructor-arg name="name" value="Afan"></constructor-arg>
 	</bean>

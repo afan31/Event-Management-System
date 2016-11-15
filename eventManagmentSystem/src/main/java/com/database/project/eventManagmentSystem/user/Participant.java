@@ -1,4 +1,8 @@
-package com.database.project.eventManagmentSystem;
+package com.database.project.eventManagmentSystem.user;
+
+import com.database.project.eventManagmentSystem.event.Event;
+
+import java.util.List;
 
 public class Participant {
 	
@@ -7,8 +11,6 @@ public class Participant {
 	private String email;
 	private String phone;
 	private int zipcode;
-	
-	private Admin admin;
 	
 	public Participant(int id, String name){
 		this.id = id;
@@ -77,11 +79,8 @@ public class Participant {
 		this.zipcode = zipcode;
 	}
 
-	/**
-	 * @param admin the admin to set
-	 */
-	public void setAdmin(Admin admin) {
-		this.admin = admin;
+	public void interestedToAttend(List<Event> Event) {
+		// JDBC code to insert into Interest table (not shown in UML)
 	}
 
 	@Override
@@ -90,7 +89,6 @@ public class Participant {
 		sb.append(id).append("\n Name -> ").append(name)
 		.append("\n Email -> ").append(email).append("\n Phone -> ")
 		.append(phone).append("\n Zipcode -> ").append(zipcode);
-		sb.append("\n\n Admin (if any) -> ").append(admin);
 		return sb.toString();
 	}
 }
