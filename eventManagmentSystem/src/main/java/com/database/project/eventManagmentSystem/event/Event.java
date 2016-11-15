@@ -1,10 +1,5 @@
 package com.database.project.eventManagmentSystem.event;
 
-import org.joda.time.LocalDate;
-import org.joda.time.LocalTime;
-
-import java.util.List;
-
 /**
  * Created by sujith on 11/15/16.
  */
@@ -16,8 +11,6 @@ public abstract class Event {
     private String city;
     private String state;
     private int totalSeats;
-    private LocalTime time;
-    private LocalDate date;
     private Boolean isIndoor;
     private Boolean isKidFriendly;
     private int zipCode;
@@ -65,22 +58,6 @@ public abstract class Event {
 
     public void setTotalSeats(int totalSeats) {
         this.totalSeats = totalSeats;
-    }
-
-    public LocalTime getTime() {
-        return time;
-    }
-
-    public void setTime(LocalTime time) {
-        this.time = time;
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
     }
 
     public Boolean getIndoor() {
