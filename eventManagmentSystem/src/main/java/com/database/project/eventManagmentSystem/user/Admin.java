@@ -6,8 +6,8 @@ public class Admin extends Participant {
 	
 	private int id;
 	
-	public Admin(int id, String name){
-		super(id, name);
+	public Admin(int id){
+		super(id);
 		this.id = id;
 	}
 

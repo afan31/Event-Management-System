@@ -12,9 +12,8 @@ public class Participant {
 	private String phone;
 	private int zipcode;
 	
-	public Participant(int id, String name){
+	public Participant(int id){
 		this.id = id;
-		this.name = name;
 	}
 	
 	/**
@@ -90,5 +89,13 @@ public class Participant {
 		.append("\n Email -> ").append(email).append("\n Phone -> ")
 		.append(phone).append("\n Zipcode -> ").append(zipcode);
 		return sb.toString();
+	}
+
+	public Event searchEvent(String eventName) {
+		return null;
+	}
+
+	public Event searchEvent(String streetAddress, String city, String state, int zip) {
+		return null;
 	}
 }

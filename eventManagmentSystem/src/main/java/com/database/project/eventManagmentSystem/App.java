@@ -1,6 +1,7 @@
 package com.database.project.eventManagmentSystem;
 
 import com.database.project.eventManagmentSystem.user.Admin;
+import com.database.project.eventManagmentSystem.user.Attendee;
 import com.database.project.eventManagmentSystem.user.Participant;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
@@ -21,5 +22,16 @@ public class App
         
         System.out.println(participant);
         System.out.println(admin);
+
+        // Participant participant = Login or Sign-up
+        // Wishlist
+        login(String name, String password);
+        register(String name, String password, String email, String phone, int zip);
+        participant.searchEvent("red sox");
+        Attendee attendee = new Attendee(participant.getId());
+
+
+
+
     }
 }
