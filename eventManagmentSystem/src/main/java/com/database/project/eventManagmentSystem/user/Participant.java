@@ -12,8 +12,9 @@ public class Participant {
 	private String phone;
 	private int zipcode;
 	
-	public Participant(int id){
+	public Participant(int id, String name){
 		this.id = id;
+		this.name = name;
 	}
 	
 	/**

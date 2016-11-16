@@ -3,11 +3,11 @@ package com.database.project.eventManagmentSystem.user;
 import com.database.project.eventManagmentSystem.event.Event;
 
 public class Admin extends Participant {
-	
+
 	private int id;
-	
-	public Admin(int id){
-		super(id);
+
+	public Admin(int id, String name){
+		super(id, name);
 		this.id = id;
 	}
 
@@ -32,7 +32,7 @@ public class Admin extends Participant {
 	public void deleteEvent(Event event) {
 		// JDBC code to delete event from Event table goes here
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Admin [id=" + id + "]";

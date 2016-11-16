@@ -8,8 +8,8 @@ public class Organizer extends Participant {
 	private OrganizerType type;
 	private String company;
 	
-	public Organizer(int id) {
-		super(id);
+	public Organizer(int id, String name) {
+		super(id, name);
 	}
 	/**
 	 * @return the id
