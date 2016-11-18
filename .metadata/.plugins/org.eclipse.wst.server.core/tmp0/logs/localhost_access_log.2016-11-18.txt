@@ -1,0 +1,4 @@
+127.0.0.1 - - [18/Nov/2016:02:17:51 -0500] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [18/Nov/2016:02:17:53 -0500] "GET /eventManagmentSystem/home.jsp HTTP/1.1" 200 259
+0:0:0:0:0:0:0:1 - - [18/Nov/2016:02:18:51 -0500] "GET /eventManagmentSystem/home.jsp HTTP/1.1" 200 259
+0:0:0:0:0:0:0:1 - - [18/Nov/2016:02:18:51 -0500] "GET /favicon.ico HTTP/1.1" 404 1016
