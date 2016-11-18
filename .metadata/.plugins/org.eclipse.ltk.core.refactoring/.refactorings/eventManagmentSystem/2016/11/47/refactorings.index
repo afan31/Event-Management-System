@@ -1,3 +1,9 @@
 1479167099231	Move compilation unit
 1479417920344	Move 'jdbc.properties' to 'eventManagmentSystem'
 1479418385100	Delete element
+1479501354820	Rename resource 'participants-servlet.xml'
+1479502734185	Move 'home.jsp' to 'jsps'
+1479503644285	Rename resource 'home.jsp'
+1479503725822	Rename resource 'participants.jsp'
+1479504569314	Rename resource 'participant.jsp'
+1479504722971	Rename resource 'participant-servlet.xml'

@@ -1,0 +1,8 @@
+package com.database.project.eventManagmentSystem.controllers;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class ParticipantController {
+
+}
