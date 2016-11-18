@@ -27,7 +27,7 @@ public class ParticipantController {
 	*/
 	
 	@RequestMapping("/")
-	public String showParticipants(Model model) {
+	public ModelAndView showParticipants(Model model) {
 		
 		model.addAttribute("name", "Sam");
 		

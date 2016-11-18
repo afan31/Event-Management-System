@@ -9,5 +9,11 @@
 <body>
 Hi there!
 Session : <%= session.getAttribute("name") %> <p/>
+
+Request : <%= request.getAttribute("name") %> <p/>
+
+Request (using Expression Language): ${name} <p/>
+
+
 </body>
 </html>
