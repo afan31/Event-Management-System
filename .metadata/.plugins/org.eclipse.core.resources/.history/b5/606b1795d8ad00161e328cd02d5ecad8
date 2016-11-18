@@ -10,7 +10,6 @@ public class ParticipantController {
 	
 	@RequestMapping("/")
 	public String showParticipants(HttpSession session) {
-		session.setAttribute("name", "Afan");
 		return "home";
 	}
 }
