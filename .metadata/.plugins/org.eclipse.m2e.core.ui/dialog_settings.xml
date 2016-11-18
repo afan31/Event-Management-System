@@ -33,8 +33,8 @@
 	</section>
 	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
 		<item value="480" key="width"/>
-		<item value="266" key="x"/>
-		<item value="484" key="y"/>
+		<item value="1546" key="x"/>
+		<item value="587" key="y"/>
 		<item value="489" key="height"/>
 	</section>
 	<section name="MavenProjectWizardArchetypePage">

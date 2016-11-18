@@ -1,0 +1,3 @@
+jdbc.user = root
+jdbc.password = password
+jdbc.driver = com.mysql.jdbc.driver

@@ -2,6 +2,7 @@ package com.database.project.eventManagmentSystem.user;
 
 import com.database.project.eventManagmentSystem.event.Event;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Participant {
@@ -12,9 +13,25 @@ public class Participant {
 	private String phone;
 	private int zipcode;
 	
-	public Participant(int id, String name){
+	private List<Event> interestedIn = new ArrayList<Event>();
+	
+	public Participant() {
+	
+	}
+	
+	public Participant(String name, String email, String phone, int zipcode){
+		this.name = name;
+		this.email = email;
+		this.phone = phone;
+		this.zipcode = zipcode;
+	}
+	
+	public Participant(int id, String name, String email, String phone, int zipcode){
 		this.id = id;
 		this.name = name;
+		this.email = email;
+		this.phone = phone;
+		this.zipcode = zipcode;
 	}
 	
 	/**
@@ -79,24 +96,32 @@ public class Participant {
 		this.zipcode = zipcode;
 	}
 
-	public void interestedToAttend(List<Event> Event) {
-		// JDBC code to insert into Interest table (not shown in UML)
+	/**
+	 * List of events participant is interested in
+	 * @return
+	 */
+	public List<Event> getInterestedIn() {
+		return interestedIn;
 	}
 
 	@Override
 	public String toString() {
-		StringBuilder sb = new StringBuilder("\n Person ID -> ");
-		sb.append(id).append("\n Name -> ").append(name)
+		StringBuilder sb = new StringBuilder();
+		sb.append("\n Name -> ").append(name)
 		.append("\n Email -> ").append(email).append("\n Phone -> ")
 		.append(phone).append("\n Zipcode -> ").append(zipcode);
 		return sb.toString();
 	}
 
-	public Event searchEvent(String eventName) {
+	/*public Event searchEvent(String eventName) {
 		return null;
 	}
 
 	public Event searchEvent(String streetAddress, String city, String state, int zip) {
 		return null;
 	}
+	
+	public void interestedToAttend(List<Event> Event) {
+		// JDBC code to insert into Interest table (not shown in UML)
+	}*/
 }

@@ -1,0 +1,11 @@
+package com.database.project.eventManagmentSystem.user;
+
+import java.util.List;
+
+public class ParticipantDAO {
+	
+	public List<Participant> getParticipants() {
+		return null;
+	}
+
+}

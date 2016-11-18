@@ -5,10 +5,10 @@ package com.database.project.eventManagmentSystem.user;
  */
 public class Attendee extends Participant {
 
-    public Attendee(int id, String name) {
-        super(id, name);
-        // JDBC code to insert into attendee table
-    }
+//    public Attendee(int id, String name) {
+//        super(id, name);
+//        // JDBC code to insert into attendee table
+//    }
 
     /**
      * attend a particular event

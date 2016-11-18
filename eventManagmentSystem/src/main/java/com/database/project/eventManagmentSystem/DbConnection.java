@@ -4,11 +4,35 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
 /**
  * Created by sujith on 11/6/16.
  */
+
+@Component
 public class DbConnection {
-    private String connectionURL = "jdbc:mysql://localhost/<schema_name>";
+	
+	private String user;
+	private String password;
+	
+	public void login() {
+		System.out.println(user +  " : " + password);
+	}
+	
+	@Autowired
+	public void setUser(@Value("${jdbc.username}")String user) {
+		this.user = user;
+	}
+
+	@Autowired
+	public void setPassword(@Value("${jdbc.password}")String password) {
+		this.password = password;
+	}
+
+   /* private String connectionURL = "jdbc:mysql://localhost/<schema_name>";
     private String user = "<user>";
     private String password = "<password>";
 
@@ -30,5 +54,5 @@ public class DbConnection {
 
     private void disconnectFromDb(Connection connection) throws SQLException {
         connection.close();
-    }
+    }*/
 }
