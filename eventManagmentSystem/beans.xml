@@ -9,7 +9,7 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
 
 	<bean id="participant"
-		class="com.database.project.eventManagmentSystem.user.Participant">
+		class="com.database.project.eventManagmentSystem.dao.Participant">
 		<!-- <constructor-arg value="1" name="id"></constructor-arg> <constructor-arg 
 			value="Afan" name="name"></constructor-arg> -->
 		<property name="email" value="afan@gmail.com"></property>

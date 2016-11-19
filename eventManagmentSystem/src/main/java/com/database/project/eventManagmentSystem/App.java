@@ -1,7 +1,5 @@
 package com.database.project.eventManagmentSystem;
 
-import com.database.project.eventManagmentSystem.user.Participant;
-import com.database.project.eventManagmentSystem.user.ParticipantDAO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +9,9 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jca.cci.CannotGetCciConnectionException;
 import org.springframework.jdbc.CannotGetJdbcConnectionException;
+
+import com.database.project.eventManagmentSystem.dao.Participant;
+import com.database.project.eventManagmentSystem.dao.ParticipantDAO;
 
 /**
  * Hello world!

@@ -9,6 +9,7 @@
 	<configs>
 		<config>beans.xml</config>
 		<config>WebContent/WEB-INF/participants-servlet.xml</config>
+		<config>src/main/java/com/database/project/eventManagmentSystem/config/dao-context.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

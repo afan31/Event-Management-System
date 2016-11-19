@@ -2182,3 +2182,87 @@
 2016-11-18 19:06:25,934 [Worker-169] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/main/resources
 2016-11-18 19:06:25,935 [Worker-169] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2016-11-18 19:06:25,935 [Worker-169] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/test/resources
+2016-11-18 19:14:07,995 [Worker-183] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:14:07,995 [Worker-183] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/main/resources
+2016-11-18 19:14:07,997 [Worker-183] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:14:07,997 [Worker-183] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/test/resources
+2016-11-18 19:14:25,952 [Worker-172] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:14:25,953 [Worker-172] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/main/resources
+2016-11-18 19:14:25,954 [Worker-172] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:14:25,954 [Worker-172] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/test/resources
+2016-11-18 19:14:56,117 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:14:56,117 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/main/resources
+2016-11-18 19:14:56,118 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:14:56,118 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/test/resources
+2016-11-18 19:15:09,291 [Worker-178] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:15:09,291 [Worker-178] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/main/resources
+2016-11-18 19:15:09,291 [Worker-178] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:15:09,291 [Worker-178] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/test/resources
+2016-11-18 19:15:35,034 [Worker-187] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:15:35,034 [Worker-187] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/main/resources
+2016-11-18 19:15:35,035 [Worker-187] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:15:35,035 [Worker-187] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/test/resources
+2016-11-18 19:15:44,762 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:15:44,762 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/main/resources
+2016-11-18 19:15:44,767 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:15:44,767 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/test/resources
+2016-11-18 19:17:48,958 [Worker-184] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:17:48,960 [Worker-184] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/main/resources
+2016-11-18 19:17:48,962 [Worker-184] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:17:48,962 [Worker-184] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/test/resources
+2016-11-18 19:18:00,502 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:18:00,502 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/main/resources
+2016-11-18 19:18:00,503 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:18:00,503 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/test/resources
+2016-11-18 19:19:05,176 [Worker-182] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:19:05,177 [Worker-182] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/main/resources
+2016-11-18 19:19:05,178 [Worker-182] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:19:05,178 [Worker-182] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/test/resources
+2016-11-18 19:20:20,686 [Worker-182] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:20:20,686 [Worker-182] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/main/resources
+2016-11-18 19:20:20,687 [Worker-182] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:20:20,687 [Worker-182] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/test/resources
+2016-11-18 19:20:40,262 [Worker-182] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:20:40,263 [Worker-182] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/main/resources
+2016-11-18 19:20:40,264 [Worker-182] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:20:40,264 [Worker-182] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/test/resources
+2016-11-18 19:20:41,275 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:20:41,275 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/main/resources
+2016-11-18 19:20:41,276 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:20:41,276 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/test/resources
+2016-11-18 19:22:07,654 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:22:07,655 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/main/resources
+2016-11-18 19:22:07,671 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:22:07,671 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/test/resources
+2016-11-18 19:22:23,504 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:22:23,504 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/main/resources
+2016-11-18 19:22:23,507 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:22:23,507 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/test/resources
+2016-11-18 19:24:06,502 [Worker-185] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:24:06,503 [Worker-185] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/main/resources
+2016-11-18 19:24:06,504 [Worker-185] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:24:06,504 [Worker-185] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/test/resources
+2016-11-18 19:26:25,958 [Worker-185] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:26:25,958 [Worker-185] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/main/resources
+2016-11-18 19:26:25,959 [Worker-185] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:26:25,959 [Worker-185] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/test/resources
+2016-11-18 19:26:44,817 [Worker-185] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:26:44,817 [Worker-185] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/main/resources
+2016-11-18 19:26:44,818 [Worker-185] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:26:44,818 [Worker-185] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/test/resources
+2016-11-18 19:27:49,737 [Worker-185] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:27:49,737 [Worker-185] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/main/resources
+2016-11-18 19:27:49,738 [Worker-185] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:27:49,738 [Worker-185] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/test/resources
+2016-11-18 19:28:10,886 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:28:10,886 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/main/resources
+2016-11-18 19:28:10,887 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:28:10,887 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/test/resources
+2016-11-18 19:29:36,529 [Worker-189] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:29:36,529 [Worker-189] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/main/resources
+2016-11-18 19:29:36,530 [Worker-189] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:29:36,530 [Worker-189] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/test/resources
+2016-11-18 19:31:25,141 [Worker-172] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:31:25,141 [Worker-172] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/main/resources
+2016-11-18 19:31:25,142 [Worker-172] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-11-18 19:31:25,143 [Worker-172] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Afan/Documents/Database_Project/eventManagmentSystem/src/test/resources
