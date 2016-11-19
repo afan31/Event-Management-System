@@ -29,7 +29,7 @@ public class ParticipantController {
 	@RequestMapping("/")
 	public String showParticipants(Model model) {
 		
-		model.addAttribute("name", "Sam");
+		model.addAttribute("name", "<b>Sam</b>");
 		
 		return "home";
 	}
