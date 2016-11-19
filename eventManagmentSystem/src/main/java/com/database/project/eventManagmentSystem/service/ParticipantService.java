@@ -26,4 +26,9 @@ public class ParticipantService {
 	public List<Participant> getCurrent(){	
 		return participantDAO.getParticipants();
 	}
+
+
+	public void createService(Participant participant) {
+		participantDAO.create(participant);
+	}
 }

@@ -9,10 +9,28 @@
 <title>Participants</title>
 </head>
 <body>
-
-	<c:forEach var="participant" items="${participants}">
-	    <p><c:out value="${participant}"></c:out></p>
+<table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Zipcode</th>
+      </tr>
+    </thead>
+    <tbody>
+      <c:forEach var="participant" items="${participants}">
+	    <tr>
+        <td><c:out value="${participant.name}"></c:out></td>
+        <td><c:out value="${participant.email}"></c:out></td>
+        <td><c:out value="${participant.phone}"></c:out></td>
+        <td><c:out value="${participant.zipcode}"></c:out></td>
+        </tr>
 	</c:forEach>
+    </tbody>
+  </table>
+
+	
 </body>
 
 </html>

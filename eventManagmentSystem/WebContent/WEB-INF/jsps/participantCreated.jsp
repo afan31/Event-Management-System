@@ -8,6 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-participant created.
+Participant created: <br><a href="${pageContext.request.contextPath}/participants">Click here to view current participants</a>
 </body>
 </html>
