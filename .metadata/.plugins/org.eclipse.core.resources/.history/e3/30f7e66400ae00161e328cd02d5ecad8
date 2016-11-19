@@ -1,0 +1,6 @@
+package com.database.project.eventManagmentSystem.controllers;
+
+@Controller
+public class HomeController {
+
+}
