@@ -1,0 +1,7 @@
+package com.database.project.eventManagmentSystem.service;
+
+
+@Service
+public class ParticipantService {
+
+}

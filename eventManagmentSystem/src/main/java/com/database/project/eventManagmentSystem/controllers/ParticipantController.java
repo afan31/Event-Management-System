@@ -1,35 +1,40 @@
 package com.database.project.eventManagmentSystem.controllers;
 
+import java.util.List;
 import java.util.Map;
-
 import javax.servlet.http.HttpSession;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.database.project.eventManagmentSystem.dao.Participant;
+import com.database.project.eventManagmentSystem.service.ParticipantService;
+
 @Controller
 public class ParticipantController {
 	
-	/*
-	@RequestMapping("/")
-	public ModelAndView showParticipants() {
-		
-		//session.setAttribute("name", "Afan");
-		ModelAndView mv = new ModelAndView("home");
-		Map<String,Object> model =  mv.getModel();
-		model.put("name", "<b>Mary</b>");
-		
-		//return "home";
-		return mv;
-	}
-	*/
+	private ParticipantService participantService;
 	
+	/**
+	 * @param participantService the participantService to set
+	 */
+	@Autowired
+	public void setParticipantService(ParticipantService participantService) {
+		this.participantService = participantService;
+	}
+
+
+
+
+
 	@RequestMapping("/")
 	public String showParticipants(Model model) {
 		
-		model.addAttribute("name", "<b>Sam</b>");
+		List<Participant> participants =  participantService.getCurrent();
+		
+		model.addAttribute("participants", participants);
 		
 		return "home";
 	}

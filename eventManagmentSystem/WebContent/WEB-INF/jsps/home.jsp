@@ -9,31 +9,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-	Hi there! Session :
-	<%=session.getAttribute("name")%>
-	<p />
-
-	Request :
-	<%=request.getAttribute("name")%>
-	<p />
-
-	Request (using Expression Language): ${name}
-	<p />
-
-	<c:out value="${name}"></c:out>
-
-	<sql:query var="rs" dataSource="jdbc/spring">
-		select id, name, phone, zipcode, email from Participant
-	</sql:query>
-	
-	<c:forEach var="row" items="${rs.rows}">
+	<c:forEach var="row" items="${participants}">
 	    Id: ${row.id}<br/>
 	    Name: ${row.name}<br/>
 	    Phone: ${row.phone}<br/>
 	    Email: ${row.email}<br/>
 	    Zipcode: ${row.zipcode}<br/>
 	</c:forEach>
-
-
+	
 </body>
 </html>

@@ -41,6 +41,7 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 			classpath:com/database/project/eventManagmentSystem/config/dao-context.xml
+			classpath:com/database/project/eventManagmentSystem/config/service-context.xml
 		</param-value>
 	</context-param>
 

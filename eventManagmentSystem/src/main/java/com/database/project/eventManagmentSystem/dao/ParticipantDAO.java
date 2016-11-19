@@ -21,16 +21,11 @@ import org.springframework.transaction.annotation.Transactional;
 public class ParticipantDAO {
 
 	private NamedParameterJdbcTemplate jdbc;
-
-	public ParticipantDAO() {
-		System.out.println("Successfully loaded participants DAO");
-	}
-	
 	
 	/**
 	 * @param jdbc the jdbc to set
 	 */
-	//@Autowired
+	@Autowired
 	public void setDataSource(DataSource jdbc) {
 		this.jdbc = new NamedParameterJdbcTemplate(jdbc);
 	}

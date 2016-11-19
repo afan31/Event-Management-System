@@ -1,0 +1,33 @@
+package com.database.project.eventManagmentSystem.controllers;
+
+import java.util.List;
+import java.util.Map;
+import javax.servlet.http.HttpSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.database.project.eventManagmentSystem.service.ParticipantService;
+
+@Controller
+public class ParticipantController {
+	
+	private ParticipantService participantService;
+	
+	@Autowired
+	public void setParticipantService(ParticipantService participantService) {
+		this.participantService = participantService;
+	}
+	
+	@RequestMapping("/")
+	public String showParticipants(Model model) {
+		
+		List<Participant> participants =  participantService.getCurrent();
+		
+		model.addAttribute("name", "Sam");
+		
+		return "home";
+	}
+}
