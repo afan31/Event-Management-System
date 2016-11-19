@@ -1547,3 +1547,16 @@ java.lang.NullPointerException
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException
+
+!ENTRY org.eclipse.ui 4 0 2016-11-18 22:59:01.743
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.core.resources 4 368 2016-11-18 22:59:46.063
+!MESSAGE Resource '/eventManagmentSystem/WebContent/WEB-INF/jsps/participantcreated.jsp' does not exist.
+
+!ENTRY org.eclipse.ui 4 0 2016-11-18 23:35:01.625
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException

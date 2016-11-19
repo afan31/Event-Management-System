@@ -14,3 +14,7 @@
 1479514668112	Copy compilation units
 1479514679877	Delete element
 1479525452237	Rename resource 'participant.jsp'
+1479527950645	Move 'participantcreated.jsp' to 'jsps'
+1479527960281	Rename resource 'participantcreated.jsp'
+1479527984634	Rename resource 'participantcreated.jsp'
+1479532953932	Rename resource 'NewFile.jsp'

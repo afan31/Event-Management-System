@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.database.project.eventManagmentSystem.dao.Participant;
@@ -40,9 +41,23 @@ public class ParticipantController {
 		return "participants";
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	@RequestMapping("/createParticipant")
 	public String createOffer() {
 		
 		return "createParticipant";
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	@RequestMapping(value="/docreate", method=RequestMethod.POST)
+	public String doCreate(Model model, Participant participant) {
+		System.out.println(participant);
+		return "participantcreated";
 	}
 }
