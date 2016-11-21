@@ -37,6 +37,18 @@
 		<servlet-name>events</servlet-name>
 		<url-pattern>/events</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<description></description>
+		<display-name>validateuser</display-name>
+		<servlet-name>validateuser</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>validateuser</servlet-name>
+		<url-pattern>/validateuser</url-pattern>
+	</servlet-mapping>
 
 
 
