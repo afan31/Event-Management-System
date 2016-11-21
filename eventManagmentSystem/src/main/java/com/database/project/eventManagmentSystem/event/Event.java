@@ -3,21 +3,27 @@ package com.database.project.eventManagmentSystem.event;
 /**
  * Created by sujith on 11/15/16.
  */
-public abstract class Event {
+public class Event {
     private int eventId;
     private String name;
     private String description;
-    private String streetAddress;
+    private String address;
     private String city;
     private String state;
-    private int totalSeats;
+    private int seats;
     private Boolean isIndoor;
     private Boolean isKidFriendly;
     private int zipCode;
-
-    public Event(int eventId, String name) {
-        this.eventId = eventId;
-        this.name = name;
+    
+    public Event() {
+    	// Required to populate RowMapper
+    }
+    
+    public Event(String name, String description, String address, int seats) {
+    	this.name = name;
+    	this.description = description;
+    	this.address = address;
+    	this.seats = seats;
     }
 
     public int getEventId() {
@@ -44,20 +50,20 @@ public abstract class Event {
         this.description = description;
     }
 
-    public String getStreetAddress() {
-        return streetAddress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setStreetAddress(String streetAddress) {
-        this.streetAddress = streetAddress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public int getTotalSeats() {
-        return totalSeats;
+    public int getSeats() {
+        return seats;
     }
 
-    public void setTotalSeats(int totalSeats) {
-        this.totalSeats = totalSeats;
+    public void setSeats(int seats) {
+        this.seats = seats;
     }
 
     public Boolean getIndoor() {

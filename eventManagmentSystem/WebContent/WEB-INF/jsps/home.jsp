@@ -12,6 +12,10 @@
 <p><a href="${pageContext.request.contextPath}/participants">Show current participants</a></p>
 
 <p><a href="${pageContext.request.contextPath}/createParticipant">Add a new participant</a></p>
+
+<p><a href="${pageContext.request.contextPath}/events">Show all events</a></p>
+
+<p><a href="${pageContext.request.contextPath}/createEvent">Add a new event</a></p>
 	
 </body>
 </html>
