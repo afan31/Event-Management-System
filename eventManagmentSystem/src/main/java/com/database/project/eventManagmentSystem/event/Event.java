@@ -14,6 +14,7 @@ public class Event {
     private Boolean isIndoor;
     private Boolean isKidFriendly;
     private int zipCode;
+    private int organizedBy;
     
     public Event() {
     	// Required to populate RowMapper
@@ -104,6 +105,14 @@ public class Event {
 
     public void setState(String state) {
         this.state = state;
+    }
+    
+    public void setOrganizedBy(int userId) {
+    	this.organizedBy = userId;
+    }
+    
+    public int getOrganizedBy() {
+    	return this.organizedBy;
     }
 
 }

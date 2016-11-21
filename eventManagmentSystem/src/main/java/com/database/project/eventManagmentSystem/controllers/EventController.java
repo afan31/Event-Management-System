@@ -61,7 +61,8 @@ public class EventController {
 	 * @return
 	 */
 	@RequestMapping(value="/eventcreate", method=RequestMethod.POST)
-	public String doCreate(Model model, @Valid Event event, BindingResult result) {
+	public String doCreate(Model model, @Valid Event event, BindingResult result,
+			HttpSession session) {
 		if(result.hasErrors()){
 			System.out.println("Form does not validate");
 			
@@ -75,6 +76,7 @@ public class EventController {
 			System.out.println("Form is validated");
 		}
 		
+		event.setOrganizedBy((Integer)session.getAttribute("userId"));
 		eventService.createService(event);
 		
 		System.out.println(event);

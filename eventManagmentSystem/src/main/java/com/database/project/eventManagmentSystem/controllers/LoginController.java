@@ -2,6 +2,7 @@ package com.database.project.eventManagmentSystem.controllers;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.database.project.eventManagmentSystem.dao.LoginUser;
+import com.database.project.eventManagmentSystem.dao.Participant;
 import com.database.project.eventManagmentSystem.event.Event;
 import com.database.project.eventManagmentSystem.service.EventService;
 import com.database.project.eventManagmentSystem.service.LoginService;
@@ -35,7 +37,8 @@ public class LoginController {
 	 * @return
 	 */
 	@RequestMapping(value="/validateuser", method=RequestMethod.POST)
-	public String doCreate(Model model, @Valid LoginUser loginUser, BindingResult result) {
+	public String doCreate(Model model, @Valid LoginUser loginUser, BindingResult result, 
+			HttpSession session) {
 		if(result.hasErrors()){
 			System.out.println("Form does not validate");
 			
@@ -48,9 +51,8 @@ public class LoginController {
 		}else{
 			System.out.println("Form is validated");
 		}
-		
-		loginService.validateUser(loginUser);
-		
+		Participant participant = loginService.validateUser(loginUser);
+		session.setAttribute("userId", participant.getId());
 		return "home";
 	}
 

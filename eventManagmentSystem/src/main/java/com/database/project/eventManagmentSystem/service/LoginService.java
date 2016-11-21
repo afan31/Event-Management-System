@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.database.project.eventManagmentSystem.dao.EventDAO;
 import com.database.project.eventManagmentSystem.dao.LoginDAO;
 import com.database.project.eventManagmentSystem.dao.LoginUser;
+import com.database.project.eventManagmentSystem.dao.Participant;
 import com.database.project.eventManagmentSystem.event.Event;
 
 @Service("loginService")
@@ -24,7 +25,7 @@ public class LoginService {
 	}
 
 	
-	public Boolean validateUser(LoginUser loginUser){	
+	public Participant validateUser(LoginUser loginUser){	
 		return loginDAO.validateUser(loginUser);
 	}
 

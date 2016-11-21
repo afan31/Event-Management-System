@@ -83,7 +83,7 @@ public class EventDAO {
 	 */
 	public boolean create(Event event){
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(event);
-		return jdbc.update("insert into Event (name,description,address,total_seats) values(:name, :description, :address, :seats)", params) == 1;
+		return jdbc.update("insert into Event (name,description,address,total_seats, organized_by) values(:name, :description, :address, :seats, :organizedBy)", params) == 1;
 	}
 //	
 //	/**
