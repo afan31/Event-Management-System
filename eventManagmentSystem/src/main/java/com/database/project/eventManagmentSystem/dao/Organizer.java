@@ -7,10 +7,7 @@ public class Organizer extends Participant {
 	private int id;
 	private OrganizerType type;
 	private String company;
-	
-//	public Organizer(int id, String name) {
-//		super(id, name);
-//	}
+
 	/**
 	 * @return the id
 	 */
@@ -46,18 +43,5 @@ public class Organizer extends Participant {
 	 */
 	public void setCompany(String company) {
 		this.company = company;
-	}
-
-	public void createEvent(Event event) {
-		// JDBC code to insert into Event table goes here
-		// this.id will be used in the organizedBy column of Event table
-	}
-
-	public void modifyEvent(Event event) {
-		// JDBC code to update Event table goes here
-	}
-
-	public void deleteEvent(Event event) {
-		// JDBC code to delete from Event table goes here
 	}
 }

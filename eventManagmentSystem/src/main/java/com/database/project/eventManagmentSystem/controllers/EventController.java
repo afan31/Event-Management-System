@@ -93,6 +93,14 @@ public class EventController {
 	public String attendevent(Model model, @Valid Event event, HttpSession session, @RequestParam Integer event_id) {	
 		System.out.println("Event ID: "+event_id);
 		eventService.attendService(event_id, (Integer)session.getAttribute("userId"));
-		return "eventattended";
+		List<Integer> userIds = eventService.getAttendees(event_id);
+		for (Integer userId : userIds) {
+			System.out.println(userId);
+		}
+		model.addAttribute("userIds", userIds);
+		List<Event> events =  eventService.getCurrent();
+		model.addAttribute("events", events);
+		model.addAttribute("eventId", event_id);
+		return "events";
 	}
 }

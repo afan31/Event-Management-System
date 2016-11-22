@@ -35,10 +35,5 @@ public class HomeController {
 		session.removeAttribute("userId");
 		return "main";
 	}
-//	
-//	@RequestMapping("/login")
-//	public String showLogin() {
-//		
-//		return "login";
-//	}
+	
 }

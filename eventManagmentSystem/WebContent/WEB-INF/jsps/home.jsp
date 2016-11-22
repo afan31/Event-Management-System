@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,9 +10,10 @@
 </head>
 <body>
 
-<p><a href="${pageContext.request.contextPath}/participants">Show current participants</a></p>
+<p> Hey user with ID <c:out value="${sessionScope.userId}"/>, Welcome! </p>
 
-<p><a href="${pageContext.request.contextPath}/createParticipant">Add a new participant</a></p>
+<!-- Ideally, only the admin should have the privilege to view all participants -->
+<p><a href="${pageContext.request.contextPath}/participants">Show current participants</a></p>
 
 <p><a href="${pageContext.request.contextPath}/events">Show all events</a></p>
 

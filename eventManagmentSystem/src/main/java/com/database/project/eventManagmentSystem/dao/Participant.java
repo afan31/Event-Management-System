@@ -125,16 +125,4 @@ public class Participant {
 		.append(phone).append("\n Zipcode -> ").append(zipcode);
 		return sb.toString();
 	}
-
-	/*public Event searchEvent(String eventName) {
-		return null;
-	}
-
-	public Event searchEvent(String streetAddress, String city, String state, int zip) {
-		return null;
-	}
-	
-	public void interestedToAttend(List<Event> Event) {
-		// JDBC code to insert into Interest table (not shown in UML)
-	}*/
 }
