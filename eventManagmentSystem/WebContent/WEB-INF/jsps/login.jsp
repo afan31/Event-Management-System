@@ -22,6 +22,7 @@
 						<input class="form-control" name="name" type="text">
 					</div>
 				</div>
+				<!-- Need another field for password -->
 				<div>
 					<button type="submit" class="btn btn-primary">Login</button>
 				</div>

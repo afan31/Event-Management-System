@@ -6,12 +6,14 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.database.project.eventManagmentSystem.dao.Participant;
@@ -81,5 +83,16 @@ public class EventController {
 		
 		System.out.println(event);
 		return "eventCreated";
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	@RequestMapping(value="/attendevent", method=RequestMethod.POST)
+	public String attendevent(Model model, @Valid Event event, HttpSession session, @RequestParam Integer event_id) {	
+		System.out.println("Event ID: "+event_id);
+		eventService.attendService(event_id, (Integer)session.getAttribute("userId"));
+		return "eventattended";
 	}
 }

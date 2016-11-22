@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.database.project.eventManagmentSystem.dao.LoginUser;
 import com.database.project.eventManagmentSystem.dao.Participant;
-import com.database.project.eventManagmentSystem.event.Event;
-import com.database.project.eventManagmentSystem.service.EventService;
 import com.database.project.eventManagmentSystem.service.LoginService;
 
 @Controller
@@ -37,20 +35,7 @@ public class LoginController {
 	 * @return
 	 */
 	@RequestMapping(value="/validateuser", method=RequestMethod.POST)
-	public String doCreate(Model model, @Valid LoginUser loginUser, BindingResult result, 
-			HttpSession session) {
-		if(result.hasErrors()){
-			System.out.println("Form does not validate");
-			
-			List<ObjectError> errors = result.getAllErrors();
-			
-			for (ObjectError error: errors) {
-				System.out.println(error);
-			}
-			
-		}else{
-			System.out.println("Form is validated");
-		}
+	public String doCreate(Model model, @Valid LoginUser loginUser, HttpSession session) {
 		Participant participant = loginService.validateUser(loginUser);
 		session.setAttribute("userId", participant.getId());
 		return "home";

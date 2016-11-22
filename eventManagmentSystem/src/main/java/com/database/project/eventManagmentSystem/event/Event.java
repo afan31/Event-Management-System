@@ -4,7 +4,7 @@ package com.database.project.eventManagmentSystem.event;
  * Created by sujith on 11/15/16.
  */
 public class Event {
-    private int eventId;
+    private int id;
     private String name;
     private String description;
     private String address;
@@ -20,19 +20,20 @@ public class Event {
     	// Required to populate RowMapper
     }
     
-    public Event(String name, String description, String address, int seats) {
+    public Event(int id, String name, String description, String address, int seats) {
+    	this.id = id;
     	this.name = name;
     	this.description = description;
     	this.address = address;
     	this.seats = seats;
     }
 
-    public int getEventId() {
-        return eventId;
+    public int getId() {
+        return id;
     }
 
-    public void setEventId(int eventId) {
-        this.eventId = eventId;
+    public void setId(int eventId) {
+        this.id = eventId;
     }
 
     public String getName() {

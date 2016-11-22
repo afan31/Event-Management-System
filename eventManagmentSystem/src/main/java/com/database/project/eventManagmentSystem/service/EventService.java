@@ -31,4 +31,8 @@ public class EventService {
 	public void createService(Event event) {
 		eventDAO.create(event);
 	}
+	
+	public void attendService(Integer event_id, Integer userId) {
+		eventDAO.attend(event_id, userId);
+	}
 }

@@ -2,7 +2,9 @@ package com.database.project.eventManagmentSystem.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.sql.DataSource;
 
@@ -42,10 +44,11 @@ public class EventDAO {
 			public Event mapRow(ResultSet rs, int rowNum) throws SQLException {
 				Event event = new Event();
 				
-				event.setName(rs.getString(1));
-				event.setDescription(rs.getString(2));
-				event.setAddress(rs.getString(3));
-				event.setSeats(rs.getInt(4));
+				event.setId(rs.getInt(1));
+				event.setName(rs.getString(2));
+				event.setDescription(rs.getString(3));
+				event.setAddress(rs.getString(4));
+				event.setSeats(rs.getInt(5));
 				
 				return event;
 			}
@@ -84,6 +87,21 @@ public class EventDAO {
 	public boolean create(Event event){
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(event);
 		return jdbc.update("insert into Event (name,description,address,total_seats, organized_by) values(:name, :description, :address, :seats, :organizedBy)", params) == 1;
+	}
+	
+	/**
+	 * 
+	 * @param event
+	 * @param userId
+	 */
+	public void attend(Integer event_id, Integer userId) {
+		System.out.println("Event ID: "+event_id);
+		System.out.println("User ID: "+userId);
+		String SQL = "INSERT INTO Event_Attendee (event_id, user_id) VALUES (:eventId, :userId)";
+	      Map namedParameters = new HashMap();   
+	      namedParameters.put("eventId", event_id);   
+	      namedParameters.put("userId", userId);
+	      jdbc.update(SQL, namedParameters);
 	}
 //	
 //	/**
