@@ -22,8 +22,18 @@ public class HomeController {
 	 * @return
 	 */
 	@RequestMapping("/login")
-	public String createOffer() {
+	public String login() {
 		return "login";
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	@RequestMapping("/logout")
+	public String logout(HttpSession session) {
+		session.removeAttribute("userId");
+		return "main";
 	}
 //	
 //	@RequestMapping("/login")

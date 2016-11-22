@@ -16,6 +16,8 @@
 <p><a href="${pageContext.request.contextPath}/events">Show all events</a></p>
 
 <p><a href="${pageContext.request.contextPath}/createEvent">Add a new event</a></p>
+
+<p><a href="${pageContext.request.contextPath}/logout">Logout</a></p>
 	
 </body>
 </html>
