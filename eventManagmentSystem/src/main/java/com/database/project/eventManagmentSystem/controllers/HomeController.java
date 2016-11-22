@@ -1,25 +1,34 @@
 package com.database.project.eventManagmentSystem.controllers;
 
-import java.util.List;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.database.project.eventManagmentSystem.dao.Participant;
 
 @Controller
 public class HomeController {
 	
 	@RequestMapping("/")
-	public String showHome() {
-		
-		return "home";
+	public String showHome(HttpSession session) {
+		if (session.getAttribute("userId") != null) {
+			return "home";
+		} else {
+			return "main";
+		}
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	@RequestMapping("/login")
-	public String showLogin() {
-		
+	public String createOffer() {
 		return "login";
 	}
+//	
+//	@RequestMapping("/login")
+//	public String showLogin() {
+//		
+//		return "login";
+//	}
 }
