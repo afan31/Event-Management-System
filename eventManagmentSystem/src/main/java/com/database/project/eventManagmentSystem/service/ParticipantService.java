@@ -31,4 +31,9 @@ public class ParticipantService {
 	public void createService(Participant participant) {
 		participantDAO.create(participant);
 	}
+	
+	public int getParticipantId(String name) {
+		Participant participant = participantDAO.getParticipant(name);
+		return participant.getId();
+	}
 }

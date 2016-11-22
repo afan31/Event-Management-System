@@ -60,7 +60,8 @@ public class ParticipantController {
 	 * @return
 	 */
 	@RequestMapping(value="/docreate", method=RequestMethod.POST)
-	public String doCreate(Model model, @Valid Participant participant, BindingResult result) {
+	public String doCreate(Model model, @Valid Participant participant, BindingResult result,
+			HttpSession session) {
 		if(result.hasErrors()){
 			System.out.println("Form does not validate");
 			
@@ -75,8 +76,9 @@ public class ParticipantController {
 		}
 		
 		participantService.createService(participant);
+		int userId = participantService.getParticipantId(participant.getName());
+		session.setAttribute("userId", userId);
 		
-		System.out.println(participant);
-		return "participantcreated";
+		return "home";
 	}
 }
