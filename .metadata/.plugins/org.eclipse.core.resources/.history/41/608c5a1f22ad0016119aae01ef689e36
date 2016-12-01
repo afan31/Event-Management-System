@@ -1,4 +1,0 @@
-jdbc.user = root
-jdbc.password = password
-jdbc.driver = com.mysql.jdbc.Driver
-jdbc.url = jdbc:mysql://localhost/EventManagementSystem

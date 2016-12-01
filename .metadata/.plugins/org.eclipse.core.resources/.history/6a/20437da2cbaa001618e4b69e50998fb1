@@ -1,7 +1,0 @@
-package com.database.project.eventManagmentSystem;
-
-public class Participant {
-	public void speak() {
-		System.out.println("Hello, I am a person");
-	}
-}

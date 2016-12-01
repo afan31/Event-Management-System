@@ -1,7 +1,0 @@
-//com.springsource.config.ui.prefs.activePageIndex\:/eventManagmentSystem/WebContent/WEB-INF/participant-servlet.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
-//com.springsource.config.ui.prefs.activePageIndex\:/eventManagmentSystem/WebContent/WEB-INF/participants-servlet.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
-//com.springsource.config.ui.prefs.activePageIndex\:/eventManagmentSystem/beans.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
-//com.springsource.config.ui.prefs.activePageIndex\:/eventManagmentSystem/src/main/java/com/database/project/eventManagmentSystem/config/dao-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
-//com.springsource.config.ui.prefs.activePageIndex\:/eventManagmentSystem/src/main/java/com/database/project/eventManagmentSystem/config/service-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
-com.springsource.config.ui.prefs.tabs.dialog=always
-eclipse.preferences.version=1
