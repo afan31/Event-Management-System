@@ -16,20 +16,6 @@
 			action="${pageContext.request.contextPath}/docreate">
 			<div class="form-group">
 				
-				<!-- table class="table">
-	<tr>
-		<td><label for="name">Name: </label></td><td><input name="name" type="text"/></td>
-	</tr>
-	<tr>
-		<td><label for="email">Email: </label></td><td><input name="email" type="text"/></td>
-	</tr>
-	<tr>
-		<td><label for="phone">Phone: </label></td><td><input name="phone" pattern="[0-9]{10}" type="text"/></td>
-	</tr>
-	<tr>
-		<td><label for="zipcode">Zipcode: </label></td><td><input name="zipcode" type="text"/></td>
-	</tr>
-	</table> -->
 				<div class="form-group row">
 					<label for="example-text-input" class="col-xs-2 col-form-label">Name</label>
 					<div class="col-xs-10">

@@ -1,1 +1,4 @@
 RemoteSystemsTempFiles/
+*.class
+.metadata/
+.recommenders/
