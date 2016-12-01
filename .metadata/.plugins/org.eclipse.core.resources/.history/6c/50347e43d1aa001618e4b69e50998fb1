@@ -1,9 +1,0 @@
-package com.database.project.eventManagmentSystem;
-
-public class Organizer {
-	
-	private int id;
-	private OrganizerType type;
-	private String company;
-
-}
