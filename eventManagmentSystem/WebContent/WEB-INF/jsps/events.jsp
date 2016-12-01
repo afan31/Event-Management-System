@@ -31,22 +31,40 @@
         <td><c:out value="${event.seats}"></c:out></td>
         <td>
         <div>
-        <form method="post"
-			action="${pageContext.request.contextPath}/attendevent">
+        <form method="post">
         	<input type="hidden" name="event_id" value="${event.id}"/>
         	<!-- Check if user has already clicked on attend for this event -->
-        	<c:set var="contains" value="0" />
-        	<c:set var="currentUserId" value="${sessionScope.userId}" />
-        	<c:set var="eventId" value="${eventId}" />
-        	<c:set var="currentEventId" value="${event.id}" />
-			<c:forEach var="userId" items="${userIds}">
-  				<c:if test="${userId eq currentUserId}">
-  					<c:if test="${eventId eq currentEventId}">
-    					<c:set var="contains" value="1" />
-    				</c:if>
+        	<c:set var="containsAttendee" value="0"/>
+        	<c:set var="containsProspectiveAttendee" value="0"/>
+        	<c:set var="currentUserId" value="${sessionScope.userId}"/>
+        	<c:set var="eventId" value="${eventId}"/>
+        	<c:set var="currentEventId" value="${event.id}"/>
+			<c:forEach var="attendee" items="${attendeeUserIds}">
+				<c:if test="${attendee.key eq currentEventId}">
+					<c:out value="key ${attendee.key}"></c:out>
+					<c:out value="event id ${currentEventId}"></c:out>
+					<c:forEach var="userId" items="${attendee.value}">
+						<c:if test="${userId eq currentUserId}">
+    						<c:set var="containsAttendee" value="1"/>
+  						</c:if>
+					</c:forEach> 
   				</c:if>
 			</c:forEach>
-        	<input type="submit" ${contains eq "1"  ? 'disabled="disabled"' : ''} value = "Attend" class="btn btn-primary"/>
+			<c:forEach var="prospectiveAttendee" items="${prospectiveUserIds}">
+				<c:if test="${prospectiveAttendee.key eq currentEventId}">
+					<c:out value="key ${prospectiveAttendee.key}"></c:out>
+					<c:out value="event id ${currentEventId}"></c:out>
+					<c:forEach var="userId" items="${prospectiveAttendee.value}">
+						<c:if test="${userId eq currentUserId}">
+    						<c:set var="containsProspectiveAttendee" value="1"/>
+  						</c:if>
+					</c:forEach> 
+  				</c:if>
+			</c:forEach>
+			<c:out value="${containsAttendee}"></c:out>
+			<c:out value="${containsProspectiveAttendee}"></c:out>
+        	<input type="submit" ${containsAttendee eq "1"  ? 'disabled="disabled"' : ''} value = "Attend" class="btn btn-primary" onclick="form.action='${pageContext.request.contextPath}/attendevent';"/>
+        	<input type="submit" ${containsProspectiveAttendee eq "1"  ? 'disabled="disabled"' : ''} value = "Interested" class="btn btn-primary" onclick="form.action='${pageContext.request.contextPath}/interested';"/>
         </form>
         </div>
         </td>

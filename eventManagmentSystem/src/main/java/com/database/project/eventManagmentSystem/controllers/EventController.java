@@ -1,5 +1,6 @@
 package com.database.project.eventManagmentSystem.controllers;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpSession;
@@ -42,8 +43,21 @@ public class EventController {
 	public String showEvents(Model model) {
 		
 		List<Event> events =  eventService.getCurrent();
-		
 		model.addAttribute("events", events);
+
+		HashMap<Integer, List<Integer>> attendeeUserIds = new HashMap<Integer, List<Integer>>();
+		for (Event event: events) {
+			int eventId = event.getId();
+			attendeeUserIds.put(eventId, eventService.getAttendees(eventId));
+		}
+		model.addAttribute("attendeeUserIds", attendeeUserIds);
+		
+		HashMap<Integer, List<Integer>> prospectiveUserIds = new HashMap<Integer, List<Integer>>();
+		for (Event event: events) {
+			int eventId = event.getId();
+			prospectiveUserIds.put(eventId, eventService.getProspectiveAttendees(eventId));
+		}
+		model.addAttribute("prospectiveUserIds", prospectiveUserIds);
 		
 		return "events";
 	}
@@ -93,14 +107,25 @@ public class EventController {
 	public String attendevent(Model model, @Valid Event event, HttpSession session, @RequestParam Integer event_id) {	
 		System.out.println("Event ID: "+event_id);
 		eventService.attendService(event_id, (Integer)session.getAttribute("userId"));
-		List<Integer> userIds = eventService.getAttendees(event_id);
-		for (Integer userId : userIds) {
-			System.out.println(userId);
-		}
-		model.addAttribute("userIds", userIds);
-		List<Event> events =  eventService.getCurrent();
-		model.addAttribute("events", events);
-		model.addAttribute("eventId", event_id);
-		return "events";
+//		List<Integer> attendeeUserIds = eventService.getAttendees(event_id);
+//		model.addAttribute("attendeeUserIds", attendeeUserIds);
+	//	List<Event> events =  eventService.getCurrent();
+//		model.addAttribute("events", events);
+//		model.addAttribute("eventId", event_id);
+		return "eventattended";
+	}
+	
+	@RequestMapping(value="/interested", method=RequestMethod.POST)
+	public String interested(Model model, @Valid Event event, HttpSession session, @RequestParam Integer event_id) {
+		System.out.println("Event ID: "+event_id);
+		eventService.interestedService(event_id, (Integer)session.getAttribute("userId"));
+//		List<Integer> prospectiveUserIds = eventService.getProspectiveAttendees(event_id);
+//		for (Integer userId : prospectiveUserIds) {
+//			System.out.println(userId);
+//		}
+//		model.addAttribute("prospectiveUserIds", prospectiveUserIds);
+//		List<Event> events =  eventService.getCurrent();
+//		model.addAttribute("events", events);
+		return "eventinterested";
 	}
 }

@@ -36,7 +36,15 @@ public class EventService {
 		eventDAO.attend(event_id, userId);
 	}
 	
+	public void interestedService(Integer event_id, Integer userId) {
+		eventDAO.interested(event_id, userId);
+	}
+	
 	public List<Integer> getAttendees(Integer event_id) {
 		return eventDAO.getAttendees(event_id);
+	}
+	
+	public List<Integer> getProspectiveAttendees(Integer event_id) {
+		return eventDAO.getProspectiveAttendees(event_id);
 	}
 }

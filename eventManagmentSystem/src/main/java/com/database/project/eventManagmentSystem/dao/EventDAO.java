@@ -80,11 +80,36 @@ public class EventDAO {
 	      jdbc.update(SQL, namedParameters);
 	}
 	
+	/**
+	 * 
+	 * @param event_id
+	 * @param userId
+	 */
+	public void interested(Integer event_id, Integer userId) {
+		System.out.println("Event ID: "+event_id);
+		System.out.println("User ID: "+userId);
+		String SQL = "INSERT INTO Event_Prospective_Attendee (event_id, user_id) VALUES (:eventId, :userId)";
+	      Map namedParameters = new HashMap();   
+	      namedParameters.put("eventId", event_id);   
+	      namedParameters.put("userId", userId);
+	      jdbc.update(SQL, namedParameters);
+	}
+	
 	
 	public List<Integer> getAttendees(Integer event_id) {
 		MapSqlParameterSource params = new MapSqlParameterSource();
 		params.addValue("event_id", event_id);
 		return jdbc.query("select user_id from Event_Attendee where event_id = :event_id", params, new RowMapper<Integer>() { 
+			public Integer mapRow(ResultSet rs, int rowNum) throws SQLException {
+				return rs.getInt(1);
+			}
+		});
+	}
+	
+	public List<Integer> getProspectiveAttendees(Integer event_id) {
+		MapSqlParameterSource params = new MapSqlParameterSource();
+		params.addValue("event_id", event_id);
+		return jdbc.query("select user_id from Event_Prospective_Attendee where event_id = :event_id", params, new RowMapper<Integer>() { 
 			public Integer mapRow(ResultSet rs, int rowNum) throws SQLException {
 				return rs.getInt(1);
 			}
