@@ -7,11 +7,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ include file="boostrap.jsp" %>
+<link type="text/css" href="css/bootstrap-timepicker.min.css" />
 <!-- <script src="eventType.js"></script>  -->
 <script
   src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <!-- Include Date Range Picker -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
 <title>Create Event</title>
 </head>
 <body>
@@ -44,6 +50,25 @@
 						<input class="form-control" name="seats" type="number">
 					</div>
 				</div>
+				
+				
+			    <div class="form-group row">
+					<label for="example-date-input" class="col-xs-2 col-form-label">Event Date</label>
+					<div class="col-xs-10"> 
+						<input type="text" name="eventDate" value="10/24/2016" />
+			        </div>
+			    </div>
+			    
+			    <div class="form-group row">
+					<label for="example-time-input" class="col-xs-2 col-form-label">Event Time</label>
+					<div class="col-xs-10">
+							<div class="input-group bootstrap-timepicker timepicker">
+						            <input id="timepicker1" type="text" class="form-control input-small">
+						            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+						    </div>
+					</div>
+				</div>
+			        
 				<div class="form-group row">
 					<label for="example-seats-input" class="col-xs-2 col-form-label">Event Type</label>
 					<div class="col-xs-10">
@@ -103,6 +128,18 @@
 </html>
 
 <script>
+
+$('#timepicker1').timepicker();
+$(function() {
+    $('input[name="eventDate"]').daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: true
+    }, 
+    function(start, end, label) {
+        var years = moment().diff(start, 'years');
+    });
+});
+
 $("#sportDiv").hide()
 $("#technologyDiv").hide()
 $("#musicDiv1").hide()
