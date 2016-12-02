@@ -48,7 +48,7 @@ public class EventDAO {
 				event.setName(rs.getString(2));
 				event.setDescription(rs.getString(3));
 				event.setAddress(rs.getString(4));
-				event.setSeats(rs.getInt(5));
+				event.setTotal_seats(rs.getInt(5));
 				
 				return event;
 			}
@@ -62,7 +62,7 @@ public class EventDAO {
 	 */
 	public boolean create(Event event){
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(event);
-		return jdbc.update("insert into Event (name,description,address,total_seats, organized_by) values(:name, :description, :address, :seats, :organizedBy)", params) == 1;
+		return jdbc.update("insert into Event (name,description,address,total_seats, organized_by) values(:name, :description, :address, :total_seats, :organized_by)", params) == 1;
 	}
 	
 	/**
@@ -111,6 +111,16 @@ public class EventDAO {
 		MapSqlParameterSource params = new MapSqlParameterSource();
 		params.addValue("event_id", event_id);
 		return jdbc.query("select user_id from Event_Interests where event_id = :event_id", params, new RowMapper<Integer>() { 
+			public Integer mapRow(ResultSet rs, int rowNum) throws SQLException {
+				return rs.getInt(1);
+			}
+		});
+	}
+	
+	public List<Integer> getEventId(String eventName) {
+		MapSqlParameterSource params = new MapSqlParameterSource();
+		params.addValue("event_name", eventName);
+		return jdbc.query("select id from Event where name = :event_name", params, new RowMapper<Integer>() { 
 			public Integer mapRow(ResultSet rs, int rowNum) throws SQLException {
 				return rs.getInt(1);
 			}

@@ -58,5 +58,10 @@ public class EventService {
 	public List<Integer> getProspectiveAttendees(Integer event_id) {
 		return eventDAO.getProspectiveAttendees(event_id);
 	}
+
+
+	public List<Integer> getEventId(String eventName) {
+		return eventDAO.getEventId(eventName);
+	}
 	
 }
