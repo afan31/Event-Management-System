@@ -24,6 +24,13 @@
 					</div>
 				</div>
 				<div class="form-group row">
+					<label for="example-text-input" class="col-xs-2 col-form-label">Password</label>
+					<div class="col-xs-10">
+					<input type="password" data-minlength="6" class="form-control" id="participantPassword" placeholder="Password" required>
+				        <div class="help-block">Minimum of 6 characters</div>
+				      	</div>
+					</div>
+				<div class="form-group row">
 					<label for="example-email-input" class="col-xs-2 col-form-label">Email</label>
 					<div class="col-xs-10">
 						<input class="form-control"  name="email" type="email" id="participantEmail" placeholder="afan@gmail.com" data-error="That email address is invalid" required>
