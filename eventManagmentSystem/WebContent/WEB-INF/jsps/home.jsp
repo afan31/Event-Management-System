@@ -31,7 +31,7 @@
 					events</a>
 			</p>
 			
-			<p><a href="${pageContext.request.contextPath}/eventsAttending">Events I am attending</a>
+			<p><a href="${pageContext.request.contextPath}/eventsForAttendee">Events I am attending</a>
 
 			<p><a href="${pageContext.request.contextPath}/eventsOrganizing">Events I am organizing</a>
 

@@ -41,6 +41,7 @@
     </tbody>
   </table>
 </form>
+<p><a href="${pageContext.request.contextPath}/">Home</a></p>
 	</div>
 </body>
 
