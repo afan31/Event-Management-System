@@ -22,32 +22,33 @@
 </head>
 <body>
 	<div class="container">
-		<form method="post"
+		<form data-toggle="validator" role="form" 
+		method="post"
 			action="${pageContext.request.contextPath}/eventcreate">
 			<div class="form-group">
 
 				<div class="form-group row">
 					<label for="example-text-input" class="col-xs-2 col-form-label">Name</label>
 					<div class="col-xs-10">
-						<input class="form-control" name="name" type="text">
+						<input class="form-control" name="name" type="text" id="eventName" placeholder="Gadget Show" required>
 					</div>
 				</div>
 				<div class="form-group row">
 					<label for="example-description-input" class="col-xs-2 col-form-label">description</label>
 					<div class="col-xs-10">
-						<input class="form-control"  name="description" type="text">
+						<input class="form-control"  name="description" type="text" id="eventDescription" placeholder="Gadgets and Technology" required>
 					</div>
 				</div>
 				<div class="form-group row">
 					<label for="example-address-input" class="col-xs-2 col-form-label">Address</label>
 					<div class="col-xs-10">
-						<input class="form-control" name="address" type="text">
+						<input class="form-control" name="address" type="text" id="eventAddress" placeholder="52 Germain Street" required>
 					</div>
 				</div>
 				<div class="form-group row">
 					<label for="example-seats-input" class="col-xs-2 col-form-label">Total Seats</label>
 					<div class="col-xs-10">
-						<input class="form-control" name="seats" type="number">
+						<input class="form-control" name="seats" type="number" id="eventNumber" placeholder=50 required>
 					</div>
 				</div>
 				
@@ -72,8 +73,8 @@
 				<div class="form-group row">
 					<label for="example-seats-input" class="col-xs-2 col-form-label">Event Type</label>
 					<div class="col-xs-10">
-						<select name="eventType" id="eventType">
-							<option>Choose Event type</option>
+						<select name="eventType" id="eventType" required>
+							<option value="">Choose Event type</option>
 							<option value="sport">Sport</option>
 							<option value="music">Music</option>
 							<option value="technology">Technology</option>
