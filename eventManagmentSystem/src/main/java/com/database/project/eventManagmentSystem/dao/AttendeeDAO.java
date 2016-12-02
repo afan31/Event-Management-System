@@ -58,4 +58,16 @@ public class AttendeeDAO {
 			}
 		});
 	}
+	
+	public void makeAttendee(int id) {
+		String sql = "insert into Attendee(id)"
+				+ " select * from (select :id) as temp"
+				+ " where not exists("
+				+ " select id from Attendee "
+				+ " where id=:id"
+				+ ") limit 1";
+		MapSqlParameterSource params = new MapSqlParameterSource();
+		params.addValue("id", id);
+		jdbc.update(sql, params);
+	}
 }

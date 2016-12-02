@@ -5,7 +5,7 @@ import com.database.project.eventManagmentSystem.event.Event;
 public class Organizer extends Participant {
 	
 	private int id;
-	private OrganizerType type;
+	private String type;
 	private String company;
 
 	/**
@@ -23,13 +23,13 @@ public class Organizer extends Participant {
 	/**
 	 * @return the type
 	 */
-	public OrganizerType getType() {
+	public String getType() {
 		return type;
 	}
 	/**
 	 * @param type the type to set
 	 */
-	public void setType(OrganizerType type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 	/**

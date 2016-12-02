@@ -15,6 +15,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.database.project.eventManagmentSystem.dao.Participant;
+import com.database.project.eventManagmentSystem.dao.Organizer;
+import com.database.project.eventManagmentSystem.event.Event;
+import com.database.project.eventManagmentSystem.event.Music;
+import com.database.project.eventManagmentSystem.event.Sport;
+import com.database.project.eventManagmentSystem.event.Technology;
 import com.database.project.eventManagmentSystem.service.ParticipantService;
 
 @Controller
@@ -80,5 +85,16 @@ public class ParticipantController {
 		session.setAttribute("userId", participant.getId());
 		session.setAttribute("userName", participant.getName());
 		return "home";
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	@RequestMapping("/organizercreate")
+	public String createOrganizer(Model model, @Valid Organizer organizer, BindingResult result, HttpSession session) {
+		organizer.setId((Integer)session.getAttribute("userId"));
+		participantService.createOrganizer(organizer);
+		return "createEvent";
 	}
 }
