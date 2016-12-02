@@ -19,7 +19,9 @@
         <th>Description</th>
         <th>Address</th>
         <th>Seats</th>
-        <th>Organizer</th>
+        <th>Time</th>
+        <th>Date</th>
+        <th>Is Indoor?</th>
       </tr>
     </thead>
     <tbody>
@@ -29,8 +31,10 @@
         <td><c:out value="${event.name}"></c:out></td>
         <td><c:out value="${event.description}"></c:out></td>
         <td><c:out value="${event.address}"></c:out></td>
-        <td><c:out value="${event.seats}"></c:out></td>
-        <td><c:out value="${event.organizedBy}"></c:out></td>
+        <td><c:out value="${event.total_seats}"></c:out></td>
+        <td><c:out value="${event.time}"></c:out></td>
+        <td><c:out value="${event.date}"></c:out></td>
+        <td><c:out value="${event.isIndoor}"></c:out></td>
         
         </tr>
 	</c:forEach>

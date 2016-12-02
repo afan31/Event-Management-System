@@ -48,11 +48,11 @@ public class AttendeeDAO {
 				event.setName(rs.getString(2));
 				event.setDescription(rs.getString(3));
 				event.setAddress(rs.getString(4));
-				event.setSeats(rs.getInt(5));/*
+				event.setTotal_seats(rs.getInt(5));
 				event.setTime(rs.getString(6));
 				event.setDate(rs.getString(7));
-				event.setIndoor(rs.getString(8));*/
-				event.setOrganizedBy(rs.getInt(9));
+				event.setIsIndoor(rs.getBoolean(8));
+				//event.setOrganizedBy(rs.getInt(9));
 				
 				return event;
 			}
