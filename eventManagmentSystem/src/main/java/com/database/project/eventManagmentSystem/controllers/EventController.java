@@ -66,6 +66,19 @@ public class EventController {
 	 * 
 	 * @return
 	 */
+	@RequestMapping("/eventsForAttendee")
+	public String showEventsForAttendee(Model model, HttpSession session) {
+		
+		List<Event> events =  eventService.getAttendeeEvents((Integer)session.getAttribute("userId"));
+		model.addAttribute("events", events);
+		
+		return "attendeeEvents";
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
 	@RequestMapping("/createEvent")
 	public String createOffer() {
 		

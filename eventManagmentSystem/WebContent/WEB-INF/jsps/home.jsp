@@ -27,7 +27,12 @@
 			</c:choose>
 
 			<p>
-				<a href="${pageContext.request.contextPath}/events">Show all
+				<a href="${pageContext.request.contextPath}/events">Show ALL
+					events</a>
+			</p>
+			
+			<p>
+				<a href="${pageContext.request.contextPath}/eventsForAttendee">Show MY
 					events</a>
 			</p>
 

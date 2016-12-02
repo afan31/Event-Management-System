@@ -110,7 +110,7 @@ public class EventDAO {
 	public List<Integer> getProspectiveAttendees(Integer event_id) {
 		MapSqlParameterSource params = new MapSqlParameterSource();
 		params.addValue("event_id", event_id);
-		return jdbc.query("select user_id from Event_Prospective_Attendee where event_id = :event_id", params, new RowMapper<Integer>() { 
+		return jdbc.query("select user_id from Event_Interests where event_id = :event_id", params, new RowMapper<Integer>() { 
 			public Integer mapRow(ResultSet rs, int rowNum) throws SQLException {
 				return rs.getInt(1);
 			}
