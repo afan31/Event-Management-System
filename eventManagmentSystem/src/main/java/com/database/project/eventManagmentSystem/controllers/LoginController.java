@@ -19,9 +19,9 @@ import com.database.project.eventManagmentSystem.service.LoginService;
 
 @Controller
 public class LoginController {
-	
+
 	private LoginService loginService;
-	
+
 	/**
 	 * @param loginService the loginService to set
 	 */
@@ -29,7 +29,7 @@ public class LoginController {
 	public void setLoginService(LoginService loginService) {
 		this.loginService = loginService;
 	}
-	
+
 	/**
 	 * 
 	 * @return
@@ -37,7 +37,14 @@ public class LoginController {
 	@RequestMapping(value="/validateuser", method=RequestMethod.POST)
 	public String doCreate(Model model, @Valid LoginUser loginUser, HttpSession session) {
 		Participant participant = loginService.validateUser(loginUser);
-		session.setAttribute("userId", participant.getId());
+		if(participant.getId()!= 0){
+			session.setAttribute("userId", participant.getId());
+			session.setAttribute("userName", participant.getName());
+			session.setAttribute("isAdmin", participant.getIsAdmin());
+		}
+		else{
+			session.setAttribute("error", "error");
+		}
 		return "home";
 	}
 

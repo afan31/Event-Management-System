@@ -33,6 +33,8 @@ public class HomeController {
 	@RequestMapping("/logout")
 	public String logout(HttpSession session) {
 		session.removeAttribute("userId");
+		session.removeAttribute("userName");
+		session.removeAttribute("isAdmin");
 		return "main";
 	}
 	

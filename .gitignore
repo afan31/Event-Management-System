@@ -3,3 +3,5 @@ RemoteSystemsTempFiles/
 .metadata/
 .recommenders/
 eventManagmentSystem/target/classes/META-INF/MANIFEST.MF
+eventManagmentSystem/target/classes/META-INF/maven/com.database.project/eventManagmentSystem/pom.properties
+Servers/

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.database.project.eventManagmentSystem.event.Event;
 import com.database.project.eventManagmentSystem.dao.EventDAO;
+import com.database.project.eventManagmentSystem.dao.AttendeeDAO;
 
 //service class used to coordinate various dao objects and give it to the controller , equivalent of calling from the main method
 
@@ -13,6 +14,7 @@ import com.database.project.eventManagmentSystem.dao.EventDAO;
 public class EventService {
 	
 	private EventDAO eventDAO;
+	private AttendeeDAO attendeeDAO;
 
 	/**
 	 * @param eventDAO the eventDAO to set
@@ -21,10 +23,19 @@ public class EventService {
 	public void setEventDAO(EventDAO eventDAO) {
 		this.eventDAO = eventDAO;
 	}
+	
+	@Autowired
+	public void setAttendeeDAO(AttendeeDAO attendeeDAO) {
+		this.attendeeDAO = attendeeDAO;
+	}
 
 	
 	public List<Event> getCurrent(){	
 		return eventDAO.getEvents();
+	}
+	
+	public List<Event> getAttendeeEvents(int attendeeId){	
+		return attendeeDAO.getAttendeeEvents(attendeeId);
 	}
 
 
@@ -46,6 +57,11 @@ public class EventService {
 	
 	public List<Integer> getProspectiveAttendees(Integer event_id) {
 		return eventDAO.getProspectiveAttendees(event_id);
+	}
+
+
+	public List<Integer> getEventId(String eventName) {
+		return eventDAO.getEventId(eventName);
 	}
 	
 	public List<Event> getAttendingEvents(Integer userId) {

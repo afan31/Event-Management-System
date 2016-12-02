@@ -106,7 +106,7 @@ public class ParticipantDAO {
 	 */
 	public boolean create(Participant participant){
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(participant);
-		return jdbc.update("insert into Participant (name,email,phone,zipcode) values(:name, :email, :phone, :zipcode)", params) == 1;
+		return jdbc.update("insert into Participant (name,password,email,phone,zipcode) values(:name, :password, :email, :phone, :zipcode)", params) == 1;
 	}
 	
 	/**
@@ -117,7 +117,7 @@ public class ParticipantDAO {
 	@Transactional
 	public int[] create(List<Participant> participants){
 		SqlParameterSource[] params = SqlParameterSourceUtils.createBatch(participants.toArray());
-		return jdbc.batchUpdate("insert into Participant (name,email,phone,zipcode) values(:name, :email, :phone, :zipcode)", params);
+		return jdbc.batchUpdate("insert into Participant (name,password,email,phone,zipcode) values(:name, :password, :email, :phone, :zipcode)", params);
 	}
 	
 	/**
@@ -127,7 +127,7 @@ public class ParticipantDAO {
 	 */
 	public boolean update(Participant participant){
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(participant);
-		return jdbc.update("update Participant set name=:name, email=:email, phone=:phone, zipcode=:zipcode where id=:id" , params) == 1;
+		return jdbc.update("update Participant set name=:name, password=:password, email=:email, phone=:phone, zipcode=:zipcode where id=:id" , params) == 1;
 	}
 	
 	/**

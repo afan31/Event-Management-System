@@ -34,11 +34,12 @@ public class LoginDAO {
 	 * @return
 	 */
 	public Participant validateUser(LoginUser loginUser) {
-		Participant participant;
+		Participant participant = new Participant();
 		try {
-			participant = getUserDetails(loginUser.getName());
+			participant = getUserDetails(loginUser.getName(), loginUser.getPassword());
 		} catch (EmptyResultDataAccessException e) {
-			return null;
+			e.printStackTrace();
+			return participant;
 		}
 		return participant;
 	}
@@ -47,21 +48,30 @@ public class LoginDAO {
 	 * 
 	 * @return
 	 */
-	public Participant getUserDetails(String name) {
+	public Participant getUserDetails(String name, String password) {
 		MapSqlParameterSource params = new MapSqlParameterSource();
 		params.addValue("name", name);
-		return jdbc.queryForObject("select * from Participant where name=:name", params, new RowMapper<Participant>() { //wrap this in Prepared Statement later
-
-			public Participant mapRow(ResultSet rs, int rowNum) throws SQLException {
+		params.addValue("password", password);
+		return jdbc.queryForObject("select * from Participant where name=:name and password=:password", params, new RowMapper<Participant>() { //wrap this in Prepared Statement later
+			public Participant mapRow(ResultSet rs, int rowNum){
 				Participant participant = new Participant();
 				
-				participant.setId(rs.getInt(1));
-				participant.setName(rs.getString(2));
-				participant.setEmail(rs.getString(3));
-				participant.setPhone(rs.getString(4));
-				participant.setZipcode(rs.getInt(5));
+				try {
+					participant.setId(rs.getInt(1));
+					participant.setName(rs.getString(2));
+					participant.setEmail(rs.getString(3));
+					participant.setPhone(rs.getString(4));
+					participant.setZipcode(rs.getInt(5));
+					participant.setIsAdmin(rs.getInt(7));
+				
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					return participant;
+				}
 				
 				return participant;
+				
 			}
 		});
 	}

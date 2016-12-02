@@ -9,36 +9,41 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 public class Participant {
-	
+
 	private int id;
-	
+
 	@NotNull(message="Cannot be null") //hibernate validations are not working --need to check
 	private String name;
-	
+
+	@NotNull(message="Cannot be null")
+	private String password;
+
 	@NotNull(message="Cannot be null")
 	//@Pattern(regexp=".*\\@.*\\..*", message="Not a valid email")
 	private String email;
-	
+
 	@NotNull(message="Cannot be null")
 	private String phone;
-	
+
 	@NotNull(message="Cannot be null")
 	//@Pattern(regexp = "[\\s]*[0-9]*[1-9]+",message="Not a valid zipcode")
 	private int zipcode;
-	
+
+	private int isAdmin;
+
 	private List<Event> interestedIn = new ArrayList<Event>();
-	
+
 	public Participant() {
-	
+
 	}
-	
+
 	public Participant(String name, String email, String phone, int zipcode){
 		this.name = name;
 		this.email = email;
 		this.phone = phone;
 		this.zipcode = zipcode;
 	}
-	
+
 	public Participant(int id, String name, String email, String phone, int zipcode){
 		this.id = id;
 		this.name = name;
@@ -46,7 +51,8 @@ public class Participant {
 		this.phone = phone;
 		this.zipcode = zipcode;
 	}
-	
+
+
 	/**
 	 * @return the id
 	 */
@@ -59,7 +65,20 @@ public class Participant {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
+	/**
+	 * @return the password
+	 */
+	public String getPassword() {
+		return password;
+	}
+	/**
+	 * @param password the password to set
+	 */
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	/**
 	 * @return the name
 	 */
@@ -107,6 +126,20 @@ public class Participant {
 	 */
 	public void setZipcode(int zipcode) {
 		this.zipcode = zipcode;
+	}
+
+	/**
+	 * @return the isAdmin
+	 */
+	public int getIsAdmin() {
+		return isAdmin;
+	}
+	
+	/**
+	 * @param isAdmin the isAdmin to set
+	 */
+	public void setIsAdmin(int isAdmin) {
+		this.isAdmin = isAdmin;
 	}
 
 	/**
