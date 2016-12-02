@@ -36,4 +36,8 @@ public class ParticipantService {
 		Participant participant = participantDAO.getParticipant(name);
 		return participant.getId();
 	}
+	
+	public void deleteParticipant(Integer participant_id) {
+		participantDAO.delete(participant_id);
+	}
 }

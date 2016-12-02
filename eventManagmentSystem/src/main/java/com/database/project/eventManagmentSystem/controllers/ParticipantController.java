@@ -12,6 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.database.project.eventManagmentSystem.dao.Participant;
@@ -80,5 +81,20 @@ public class ParticipantController {
 		session.setAttribute("userId", participant.getId());
 		session.setAttribute("userName", participant.getName());
 		return "home";
+	}
+	
+	@RequestMapping("/adminDeleteParticipants")
+	public String adminDeleteParticipants(Model model) {
+		List<Participant> participants =  participantService.getCurrent();
+		model.addAttribute("participants", participants);
+		return "admindeleteparticipants";
+	}
+	
+	@RequestMapping(value="/admindeleteparticipant", method=RequestMethod.POST) 
+	public String adminDeleteParticipant(Model model, @RequestParam Integer participant_id) {
+		participantService.deleteParticipant(participant_id);
+		List<Participant> participants =  participantService.getCurrent();
+		model.addAttribute("participants", participants);
+		return "adminparticipantdeleted";
 	}
 }

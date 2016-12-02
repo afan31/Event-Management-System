@@ -47,6 +47,14 @@
 					</p>
 				</c:when>
 			</c:choose>
+			
+			<c:choose>
+				<c:when test="${sessionScope.isAdmin != 0}">
+					<p>
+						<a href="${pageContext.request.contextPath}/adminDeleteParticipants">Delete Participants</a>
+					</p>
+				</c:when>
+			</c:choose>
 
 			<p>
 				<a href="${pageContext.request.contextPath}/logout">Logout</a>
