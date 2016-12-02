@@ -62,23 +62,23 @@ public class ParticipantController {
 	@RequestMapping(value="/docreate", method=RequestMethod.POST)
 	public String doCreate(Model model, @Valid Participant participant, BindingResult result,
 			HttpSession session) {
-		if(result.hasErrors()){
-			System.out.println("Form does not validate");
-			
-			List<ObjectError> errors = result.getAllErrors();
-			
-			for (ObjectError error: errors) {
-				System.out.println(error);
-			}
-			
-		}else{
-			System.out.println("Form is validated");
-		}
-		
+//		if(result.hasErrors()){
+//			System.out.println("Form does not validate");
+//			
+//			List<ObjectError> errors = result.getAllErrors();
+//			
+//			for (ObjectError error: errors) {
+//				System.out.println(error);
+//			}
+//			
+//		}else{
+//			System.out.println("Form is validated");
+//		}
+		//session.removeAttribute("userId");
 		participantService.createService(participant);
-		int userId = participantService.getParticipantId(participant.getName());
-		session.setAttribute("userId", userId);
-		
+		//int userName = participantService.getParticipantId(participant.getName());
+		session.setAttribute("userId", participant.getId());
+		session.setAttribute("userName", participant.getName());
 		return "home";
 	}
 }
