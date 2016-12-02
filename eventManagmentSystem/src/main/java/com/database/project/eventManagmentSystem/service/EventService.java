@@ -56,4 +56,8 @@ public class EventService {
 		return eventDAO.getOrganizingEvents(userId);
 	}
 	
+	public void deleteEvent(Integer event_id) {
+		eventDAO.deleteEvent(event_id);
+	}
+	
 }

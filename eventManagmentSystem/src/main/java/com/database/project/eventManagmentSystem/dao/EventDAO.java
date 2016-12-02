@@ -150,5 +150,11 @@ public List<Event> getOrganizingEvents(Integer userId) {
 			}
 		});
 	}
+
+public void deleteEvent(Integer eventId) {
+	MapSqlParameterSource params = new MapSqlParameterSource();
+	params.addValue("eventId", eventId);
+	jdbc.update("delete from Event where id=:eventId", params);
+}
 	
 }

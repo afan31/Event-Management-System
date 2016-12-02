@@ -131,4 +131,12 @@ public class EventController {
 		model.addAttribute("events", events);
 		return "eventsorganizing";
 	}
+	
+	@RequestMapping(value="/deleteevent", method=RequestMethod.POST)
+	public String deleteEvent(Model model, @RequestParam Integer event_id) {
+		eventService.deleteEvent(event_id);
+		List<Event> events =  eventService.getCurrent();
+		model.addAttribute("events", events);
+		return "eventdeleted";
+	}
 }
