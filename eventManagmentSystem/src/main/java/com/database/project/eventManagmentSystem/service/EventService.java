@@ -52,4 +52,8 @@ public class EventService {
 		return eventDAO.getAttendingEvents(userId);
 	}
 	
+	public List<Event> getOrganizingEvents(Integer userId) {
+		return eventDAO.getOrganizingEvents(userId);
+	}
+	
 }

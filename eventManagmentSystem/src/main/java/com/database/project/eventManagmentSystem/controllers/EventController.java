@@ -124,4 +124,11 @@ public class EventController {
 		model.addAttribute("events", events);
 		return "eventsattending";
 	}
+	
+	@RequestMapping(value="/eventsOrganizing")
+	public String eventsOrganizing(Model model, @Valid Event event, HttpSession session) {
+		List<Event> events =  eventService.getOrganizingEvents((Integer)session.getAttribute("userId"));
+		model.addAttribute("events", events);
+		return "eventsorganizing";
+	}
 }
