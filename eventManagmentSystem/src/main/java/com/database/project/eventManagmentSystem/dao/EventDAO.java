@@ -70,13 +70,14 @@ public class EventDAO {
 	 * @param event
 	 * @param userId
 	 */
-	public void attend(Integer event_id, Integer userId) {
+	public void attend(Integer event_id, Integer numGuests, Integer userId) {
 		System.out.println("Event ID: "+event_id);
 		System.out.println("User ID: "+userId);
-		String SQL = "INSERT INTO Event_Attendee (event_id, user_id) VALUES (:eventId, :userId)";
+		String SQL = "INSERT INTO Event_Attendee (event_id, noOfGuests, user_id) VALUES (:eventId, :numGuests, :userId)";
 	      Map namedParameters = new HashMap();   
 	      namedParameters.put("eventId", event_id);   
 	      namedParameters.put("userId", userId);
+	      namedParameters.put("numGuests", numGuests);
 	      jdbc.update(SQL, namedParameters);
 	}
 	
@@ -115,4 +116,5 @@ public class EventDAO {
 			}
 		});
 	}
+	
 }

@@ -41,8 +41,6 @@
         	<c:set var="currentEventId" value="${event.id}"/>
 			<c:forEach var="attendee" items="${attendeeUserIds}">
 				<c:if test="${attendee.key eq currentEventId}">
-					<c:out value="key ${attendee.key}"></c:out>
-					<c:out value="event id ${currentEventId}"></c:out>
 					<c:forEach var="userId" items="${attendee.value}">
 						<c:if test="${userId eq currentUserId}">
     						<c:set var="containsAttendee" value="1"/>
@@ -52,8 +50,6 @@
 			</c:forEach>
 			<c:forEach var="prospectiveAttendee" items="${prospectiveUserIds}">
 				<c:if test="${prospectiveAttendee.key eq currentEventId}">
-					<c:out value="key ${prospectiveAttendee.key}"></c:out>
-					<c:out value="event id ${currentEventId}"></c:out>
 					<c:forEach var="userId" items="${prospectiveAttendee.value}">
 						<c:if test="${userId eq currentUserId}">
     						<c:set var="containsProspectiveAttendee" value="1"/>
@@ -61,8 +57,7 @@
 					</c:forEach> 
   				</c:if>
 			</c:forEach>
-			<c:out value="${containsAttendee}"></c:out>
-			<c:out value="${containsProspectiveAttendee}"></c:out>
+			<input type="text" ${containsAttendee eq "1"  ? 'disabled="disabled"' : ''} name="numGuests" placeholder="No of guests..." value="${numGuests}"/>
         	<input type="submit" ${containsAttendee eq "1"  ? 'disabled="disabled"' : ''} value = "Attend" class="btn btn-primary" onclick="form.action='${pageContext.request.contextPath}/attendevent';"/>
         	<input type="submit" ${containsProspectiveAttendee eq "1"  ? 'disabled="disabled"' : ''} value = "Interested" class="btn btn-primary" onclick="form.action='${pageContext.request.contextPath}/interested';"/>
         </form>

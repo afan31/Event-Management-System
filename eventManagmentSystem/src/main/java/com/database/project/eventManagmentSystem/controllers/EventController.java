@@ -40,7 +40,7 @@ public class EventController {
 	 * @return
 	 */
 	@RequestMapping("/events")
-	public String showEvents(Model model) {
+	public String showEvents(Model model, HttpSession session) {
 		
 		List<Event> events =  eventService.getCurrent();
 		model.addAttribute("events", events);
@@ -104,9 +104,10 @@ public class EventController {
 	 * @return
 	 */
 	@RequestMapping(value="/attendevent", method=RequestMethod.POST)
-	public String attendevent(Model model, @Valid Event event, HttpSession session, @RequestParam Integer event_id) {	
+	public String attendevent(Model model, @Valid Event event, HttpSession session, @RequestParam Integer event_id, 
+			@RequestParam Integer numGuests) {	
 		System.out.println("Event ID: "+event_id);
-		eventService.attendService(event_id, (Integer)session.getAttribute("userId"));
+		eventService.attendService(event_id, numGuests, (Integer)session.getAttribute("userId"));
 //		List<Integer> attendeeUserIds = eventService.getAttendees(event_id);
 //		model.addAttribute("attendeeUserIds", attendeeUserIds);
 	//	List<Event> events =  eventService.getCurrent();

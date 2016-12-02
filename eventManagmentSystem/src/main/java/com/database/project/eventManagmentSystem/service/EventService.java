@@ -32,8 +32,8 @@ public class EventService {
 		eventDAO.create(event);
 	}
 	
-	public void attendService(Integer event_id, Integer userId) {
-		eventDAO.attend(event_id, userId);
+	public void attendService(Integer event_id, Integer numGuests, Integer userId) {
+		eventDAO.attend(event_id, numGuests, userId);
 	}
 	
 	public void interestedService(Integer event_id, Integer userId) {
@@ -47,4 +47,5 @@ public class EventService {
 	public List<Integer> getProspectiveAttendees(Integer event_id) {
 		return eventDAO.getProspectiveAttendees(event_id);
 	}
+	
 }
