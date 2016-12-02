@@ -37,13 +37,13 @@ public class ParticipantController {
 	 * @return
 	 */
 	@RequestMapping("/participants")
-	public String showParticipants(Model model) {
+	public String showParticipants(Model model, HttpSession session) {
 		
-		List<Participant> participants =  participantService.getCurrent();
-		
-		model.addAttribute("participants", participants);
-		
-		return "participants";
+			List<Participant> participants =  participantService.getCurrent();
+			
+			model.addAttribute("participants", participants);
+			
+			return "participants";
 	}
 	
 	/**
