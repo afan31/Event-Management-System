@@ -89,7 +89,7 @@ public class EventDAO {
 	public void interested(Integer event_id, Integer userId) {
 		System.out.println("Event ID: "+event_id);
 		System.out.println("User ID: "+userId);
-		String SQL = "INSERT INTO Event_Prospective_Attendee (event_id, user_id) VALUES (:eventId, :userId)";
+		String SQL = "INSERT INTO Event_Interests (event_id, user_id) VALUES (:eventId, :userId)";
 	      Map namedParameters = new HashMap();   
 	      namedParameters.put("eventId", event_id);   
 	      namedParameters.put("userId", userId);
@@ -126,5 +126,45 @@ public class EventDAO {
 			}
 		});
 	}
+	
+	public List<Event> getAttendingEvents(Integer userId) {
+		
+		MapSqlParameterSource params = new MapSqlParameterSource();
+		params.addValue("userId", userId);
+		return jdbc.query("select * from Event e, Event_Attendee ea where e.id=ea.event_id and ea.user_id=:userId", params, new RowMapper<Event>() { 
+			public Event mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Event event = new Event();
+				event.setId(rs.getInt(1));
+				event.setName(rs.getString(2));
+				event.setDescription(rs.getString(3));
+				event.setAddress(rs.getString(4));
+				event.setTotal_seats(rs.getInt(5));
+				return event;
+			}
+		});
+	}
+	
+public List<Event> getOrganizingEvents(Integer userId) {
+		
+		MapSqlParameterSource params = new MapSqlParameterSource();
+		params.addValue("userId", userId);
+		return jdbc.query("select * from Event where organized_by=:userId", params, new RowMapper<Event>() { 
+			public Event mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Event event = new Event();
+				event.setId(rs.getInt(1));
+				event.setName(rs.getString(2));
+				event.setDescription(rs.getString(3));
+				event.setAddress(rs.getString(4));
+				event.setTotal_seats(rs.getInt(5));
+				return event;
+			}
+		});
+	}
+
+public void deleteEvent(Integer eventId) {
+	MapSqlParameterSource params = new MapSqlParameterSource();
+	params.addValue("eventId", eventId);
+	jdbc.update("delete from Event where id=:eventId", params);
+}
 	
 }

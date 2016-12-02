@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ include file="boostrap.jsp" %>
-<title>Events</title>
+<title>Events Organizing</title>
 </head>
 <body>
 <div class="container">
@@ -19,9 +19,6 @@
         <th>Description</th>
         <th>Address</th>
         <th>Seats</th>
-        <th>Time</th>
-        <th>Date</th>
-        <th>Is Indoor?</th>
       </tr>
     </thead>
     <tbody>
@@ -32,10 +29,14 @@
         <td><c:out value="${event.description}"></c:out></td>
         <td><c:out value="${event.address}"></c:out></td>
         <td><c:out value="${event.total_seats}"></c:out></td>
-        <td><c:out value="${event.time}"></c:out></td>
-        <td><c:out value="${event.date}"></c:out></td>
-        <td><c:out value="${event.isIndoor}"></c:out></td>
-        
+        <td>
+        <div>
+         <form method="post">
+        	<input type="hidden" name="event_id" value="${event.id}"/>
+        	<input type="submit" value = "Delete" class="btn btn-primary" onclick="form.action='${pageContext.request.contextPath}/deleteevent';"/>
+        </form> 
+        </div>
+        </td>
         </tr>
 	</c:forEach>
     </tbody>

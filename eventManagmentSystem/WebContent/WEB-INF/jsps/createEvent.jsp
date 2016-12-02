@@ -135,6 +135,7 @@
 				</div>
 				</div>
 		</form>
+		<p><a href="${pageContext.request.contextPath}/">Home</a></p>
 	</div>
 </body>
 </html>

@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ include file="boostrap.jsp" %>
-<title>Events</title>
+<title>Events Attending</title>
 </head>
 <body>
 <div class="container">
@@ -31,7 +31,7 @@
         <td><c:out value="${event.total_seats}"></c:out></td>
         <td>
         <div>
-        <form method="post">
+        <%-- <form method="post">
         	<input type="hidden" name="event_id" value="${event.id}"/>
         	<!-- Check if user has already clicked on attend for this event -->
         	<c:set var="containsAttendee" value="0"/>
@@ -60,15 +60,15 @@
 			<input type="text" ${containsAttendee eq "1"  ? 'disabled="disabled"' : ''} name="numGuests" placeholder="No of guests..." value="${numGuests}"/>
         	<input type="submit" ${containsAttendee eq "1"  ? 'disabled="disabled"' : ''} value = "Attend" class="btn btn-primary" onclick="form.action='${pageContext.request.contextPath}/attendevent';"/>
         	<input type="submit" ${containsProspectiveAttendee eq "1"  ? 'disabled="disabled"' : ''} value = "Interested" class="btn btn-primary" onclick="form.action='${pageContext.request.contextPath}/interested';"/>
-        </form>
+        </form> --%>
         </div>
         </td>
         </tr>
 	</c:forEach>
     </tbody>
   </table>
-  <p><a href="${pageContext.request.contextPath}/">Home</a>
 </form>
+<p><a href="${pageContext.request.contextPath}/">Home</a></p>
 	</div>
 </body>
 

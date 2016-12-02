@@ -31,15 +31,22 @@
 					events</a>
 			</p>
 			
-			<p>
-				<a href="${pageContext.request.contextPath}/eventsForAttendee">Show MY
-					events</a>
-			</p>
+			<p><a href="${pageContext.request.contextPath}/eventsForAttendee">Events I am attending</a>
+
+			<p><a href="${pageContext.request.contextPath}/eventsOrganizing">Events I am organizing</a>
 
 			<p>
 				<a href="${pageContext.request.contextPath}/createEvent">Add a
 					new event</a>
 			</p>
+			
+			<c:choose>
+				<c:when test="${sessionScope.isAdmin != 0}">
+					<p>
+						<a href="${pageContext.request.contextPath}/adminDeleteEvents">Delete Events</a>
+					</p>
+				</c:when>
+			</c:choose>
 
 			<p>
 				<a href="${pageContext.request.contextPath}/logout">Logout</a>

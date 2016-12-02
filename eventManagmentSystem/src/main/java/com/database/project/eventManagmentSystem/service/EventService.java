@@ -64,4 +64,16 @@ public class EventService {
 		return eventDAO.getEventId(eventName);
 	}
 	
+	public List<Event> getAttendingEvents(Integer userId) {
+		return eventDAO.getAttendingEvents(userId);
+	}
+	
+	public List<Event> getOrganizingEvents(Integer userId) {
+		return eventDAO.getOrganizingEvents(userId);
+	}
+	
+	public void deleteEvent(Integer event_id) {
+		eventDAO.deleteEvent(event_id);
+	}
+	
 }
