@@ -61,7 +61,7 @@ public class LoginDAO {
 					participant.setName(rs.getString(2));
 					participant.setEmail(rs.getString(3));
 					participant.setPhone(rs.getString(4));
-					participant.setZipcode(rs.getInt(5));
+					participant.setZipcode(rs.getString(5));
 					participant.setIsAdmin(rs.getInt(7));
 				
 				} catch (SQLException e) {

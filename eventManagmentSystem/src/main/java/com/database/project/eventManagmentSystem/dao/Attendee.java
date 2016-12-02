@@ -9,11 +9,11 @@ public class Attendee extends Participant {
 		super();
 	}
 	
-	public Attendee(String name, String email, String phone, int zipcode) {
+	public Attendee(String name, String email, String phone, String zipcode) {
 		super(name, email, phone, zipcode);
 	}
 	
-	public Attendee(int id, String name, String email, String phone, int zipcode) {
+	public Attendee(int id, String name, String email, String phone, String zipcode) {
 		super(id, name, email, phone, zipcode);
 	}
 	
