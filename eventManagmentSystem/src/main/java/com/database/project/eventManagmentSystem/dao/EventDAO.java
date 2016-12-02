@@ -117,4 +117,21 @@ public class EventDAO {
 		});
 	}
 	
+	public List<Event> getAttendingEvents(Integer userId) {
+		
+		MapSqlParameterSource params = new MapSqlParameterSource();
+		params.addValue("userId", userId);
+		return jdbc.query("select * from Event e, Event_Attendee ea where e.id=ea.event_id and ea.user_id=:userId", params, new RowMapper<Event>() { 
+			public Event mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Event event = new Event();
+				event.setId(rs.getInt(1));
+				event.setName(rs.getString(2));
+				event.setDescription(rs.getString(3));
+				event.setAddress(rs.getString(4));
+				event.setSeats(rs.getInt(5));
+				return event;
+			}
+		});
+	}
+	
 }

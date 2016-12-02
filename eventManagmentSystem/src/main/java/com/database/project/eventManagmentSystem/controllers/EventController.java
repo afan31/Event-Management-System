@@ -108,11 +108,6 @@ public class EventController {
 			@RequestParam Integer numGuests) {	
 		System.out.println("Event ID: "+event_id);
 		eventService.attendService(event_id, numGuests, (Integer)session.getAttribute("userId"));
-//		List<Integer> attendeeUserIds = eventService.getAttendees(event_id);
-//		model.addAttribute("attendeeUserIds", attendeeUserIds);
-	//	List<Event> events =  eventService.getCurrent();
-//		model.addAttribute("events", events);
-//		model.addAttribute("eventId", event_id);
 		return "eventattended";
 	}
 	
@@ -120,13 +115,13 @@ public class EventController {
 	public String interested(Model model, @Valid Event event, HttpSession session, @RequestParam Integer event_id) {
 		System.out.println("Event ID: "+event_id);
 		eventService.interestedService(event_id, (Integer)session.getAttribute("userId"));
-//		List<Integer> prospectiveUserIds = eventService.getProspectiveAttendees(event_id);
-//		for (Integer userId : prospectiveUserIds) {
-//			System.out.println(userId);
-//		}
-//		model.addAttribute("prospectiveUserIds", prospectiveUserIds);
-//		List<Event> events =  eventService.getCurrent();
-//		model.addAttribute("events", events);
 		return "eventinterested";
+	}
+	
+	@RequestMapping(value="/eventsAttending")
+	public String eventsAttending(Model model, @Valid Event event, HttpSession session) {
+		List<Event> events =  eventService.getAttendingEvents((Integer)session.getAttribute("userId"));
+		model.addAttribute("events", events);
+		return "eventsattending";
 	}
 }

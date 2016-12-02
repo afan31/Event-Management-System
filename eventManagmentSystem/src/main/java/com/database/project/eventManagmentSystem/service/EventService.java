@@ -48,4 +48,8 @@ public class EventService {
 		return eventDAO.getProspectiveAttendees(event_id);
 	}
 	
+	public List<Event> getAttendingEvents(Integer userId) {
+		return eventDAO.getAttendingEvents(userId);
+	}
+	
 }
