@@ -104,7 +104,7 @@ public class ParticipantDAO {
 	 * @param participant
 	 * @return
 	 */
-	public boolean create(Participant participant){
+	public boolean create(Participant participant) throws SQLException {
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(participant);
 		return jdbc.update("insert into Participant (name,password,email,phone,zipcode) values(:name, :password, :email, :phone, :zipcode)", params) == 1;
 	}

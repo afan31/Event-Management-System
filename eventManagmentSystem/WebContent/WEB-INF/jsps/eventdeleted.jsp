@@ -8,6 +8,6 @@
 <title>Event deletion successful</title>
 </head>
 <body>
-Event deleted: <br><a href="${pageContext.request.contextPath}/eventsOrganizing">Events I am organizing</a>
+Event deleted <br><a href="${pageContext.request.contextPath}/eventsOrganizing">Events I am organizing</a>
 </body>
 </html>

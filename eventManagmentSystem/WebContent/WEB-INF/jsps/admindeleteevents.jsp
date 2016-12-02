@@ -7,9 +7,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ include file="boostrap.jsp" %>
-<title>Delete Events</title>
+<title>Admin Delete Events</title>
 </head>
 <body>
+<c:choose>
+				<c:when test="${sessionScope.isAdmin != 0}">
 <div class="container">
 <table class="table">
     <thead>
@@ -44,6 +46,15 @@
 </form>
 <p><a href="${pageContext.request.contextPath}/">Home</a></p>
 	</div>
+	</c:when>
+			  
+			  <c:otherwise>
+			<p>
+				<a href="${pageContext.request.contextPath}/">You don't have the access to delete events, 
+				please go back to the home page</a>
+			</p>
+		</c:otherwise>
+			</c:choose>
 </body>
 
 </html>
