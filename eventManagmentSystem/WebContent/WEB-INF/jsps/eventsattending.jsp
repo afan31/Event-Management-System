@@ -28,7 +28,7 @@
         <td><c:out value="${event.name}"></c:out></td>
         <td><c:out value="${event.description}"></c:out></td>
         <td><c:out value="${event.address}"></c:out></td>
-        <td><c:out value="${event.seats}"></c:out></td>
+        <td><c:out value="${event.total_seats}"></c:out></td>
         <td>
         <div>
         <%-- <form method="post">

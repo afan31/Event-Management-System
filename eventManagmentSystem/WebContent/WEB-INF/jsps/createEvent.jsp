@@ -121,7 +121,7 @@
 				<div class="form-group row" id="technologyDiv">
 					<label for="example-seats-input" class="col-xs-2 col-form-label">Category</label>
 					<div class="col-xs-10">
-						<select name="category" id="category" required>
+						<select name="category" id="category">
 						<option value="">Choose Technology type</option>
 							<option value="mobile">Mobile</option>
 							<option value="robotics">Robotics</option>

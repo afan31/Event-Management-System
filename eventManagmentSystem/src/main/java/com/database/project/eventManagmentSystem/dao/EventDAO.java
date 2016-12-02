@@ -89,7 +89,7 @@ public class EventDAO {
 	public void interested(Integer event_id, Integer userId) {
 		System.out.println("Event ID: "+event_id);
 		System.out.println("User ID: "+userId);
-		String SQL = "INSERT INTO Event_Prospective_Attendee (event_id, user_id) VALUES (:eventId, :userId)";
+		String SQL = "INSERT INTO Event_Interests (event_id, user_id) VALUES (:eventId, :userId)";
 	      Map namedParameters = new HashMap();   
 	      namedParameters.put("eventId", event_id);   
 	      namedParameters.put("userId", userId);
@@ -138,7 +138,7 @@ public class EventDAO {
 				event.setName(rs.getString(2));
 				event.setDescription(rs.getString(3));
 				event.setAddress(rs.getString(4));
-				event.setSeats(rs.getInt(5));
+				event.setTotal_seats(rs.getInt(5));
 				return event;
 			}
 		});
@@ -155,7 +155,7 @@ public List<Event> getOrganizingEvents(Integer userId) {
 				event.setName(rs.getString(2));
 				event.setDescription(rs.getString(3));
 				event.setAddress(rs.getString(4));
-				event.setSeats(rs.getInt(5));
+				event.setTotal_seats(rs.getInt(5));
 				return event;
 			}
 		});
