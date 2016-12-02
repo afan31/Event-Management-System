@@ -48,7 +48,7 @@
 				<div class="form-group row">
 					<label for="example-seats-input" class="col-xs-2 col-form-label">Total Seats</label>
 					<div class="col-xs-10">
-						<input class="form-control" name="seats" type="number" id="eventNumber" placeholder=50 required>
+						<input class="form-control" name="total_seats" type="number" id="eventNumber" placeholder=50 required>
 					</div>
 				</div>
 				
@@ -56,7 +56,7 @@
 			    <div class="form-group row">
 					<label for="example-date-input" class="col-xs-2 col-form-label">Event Date</label>
 					<div class="col-xs-10"> 
-						<input type="text" name="eventDate" value="10/24/2016" />
+						<input class="form-control" type="text" name="date" value="10/24/2016" />
 			        </div>
 			    </div>
 			    
@@ -64,9 +64,20 @@
 					<label for="example-time-input" class="col-xs-2 col-form-label">Event Time</label>
 					<div class="col-xs-10">
 							<div class="input-group bootstrap-timepicker timepicker">
-						            <input id="timepicker1" type="text" class="form-control input-small">
+						            <input id="timepicker1" type="text" name="time" class="form-control input-small">
 						            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
 						    </div>
+					</div>
+				</div>
+				
+				<div class="form-group row">
+					<label for="example-isIndoor-input" class="col-xs-2 col-form-label">Is Indoor?</label>
+					<div class="col-xs-10">
+						<select name="isIndoor" id="isIndoor" required>
+							<option value="">Choose one</option>
+							<option value="yes">Yes</option>
+							<option value="no">No</option>
+						</select>
 					</div>
 				</div>
 			        
@@ -81,6 +92,8 @@
 						</select>
 					</div>
 				</div>
+				
+				
 				
 				<!-- sport field -->
 				<div class="form-group row" id="sportDiv">
@@ -108,16 +121,14 @@
 				<div class="form-group row" id="technologyDiv">
 					<label for="example-seats-input" class="col-xs-2 col-form-label">Category</label>
 					<div class="col-xs-10">
-						<select name="techType" id="techType">
+						<select name="category" id="category" required>
+						<option value="">Choose Technology type</option>
 							<option value="mobile">Mobile</option>
 							<option value="robotics">Robotics</option>
 							<option value="cloud">Cloud</option>
 						</select>
 					</div>
 				</div>
-				
-			
-				
 				
 					<button type="submit" class="btn btn-primary">Create
 						event</button>

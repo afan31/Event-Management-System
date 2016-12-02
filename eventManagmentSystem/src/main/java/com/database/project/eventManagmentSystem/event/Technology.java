@@ -4,7 +4,7 @@ public class Technology extends Event {
 	
 	private int id;
 	
-	private TechCategory techCategory;
+	private String category;
 	
 	/**
 	 * @return the id
@@ -19,15 +19,16 @@ public class Technology extends Event {
 		this.id = id;
 	}
 	/**
-	 * @return the techCategory
+	 * @return the category
 	 */
-	public TechCategory getTechCategory() {
-		return techCategory;
+	public String getCategory() {
+		return category;
 	}
 	/**
-	 * @param techCategory the techCategory to set
+	 * @param category the category to set
 	 */
-	public void setTechCategory(TechCategory techCategory) {
-		this.techCategory = techCategory;
+	public void setCategory(String category) {
+		this.category = category;
 	}
+	
 }
