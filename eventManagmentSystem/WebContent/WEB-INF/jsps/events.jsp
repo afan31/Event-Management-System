@@ -67,6 +67,7 @@
 	</c:forEach>
     </tbody>
   </table>
+  <p><a href="${pageContext.request.contextPath}/">Home</a>
 </form>
 	</div>
 </body>
