@@ -143,9 +143,8 @@ public class EventDAO {
 			}
 		});
 	}
-	
-public List<Event> getOrganizingEvents(Integer userId) {
-		
+
+	public List<Event> getOrganizingEvents(Integer userId) {
 		MapSqlParameterSource params = new MapSqlParameterSource();
 		params.addValue("userId", userId);
 		return jdbc.query("select * from Event where organized_by=:userId", params, new RowMapper<Event>() { 

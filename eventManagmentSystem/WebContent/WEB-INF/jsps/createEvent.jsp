@@ -52,13 +52,14 @@
 					</div>
 				</div>
 				
-				
+			    
 			    <div class="form-group row">
 					<label for="example-date-input" class="col-xs-2 col-form-label">Event Date</label>
-					<div class="col-xs-10"> 
+ 					<div class="col-xs-10"> 
 						<input class="form-control" type="text" name="date" value="10/24/2016" />
-			        </div>
-			    </div>
+ 			        </div>
+ 			    </div>
+			    
 			    
 			    <div class="form-group row">
 					<label for="example-time-input" class="col-xs-2 col-form-label">Event Time</label>
@@ -144,7 +145,7 @@
 
 $('#timepicker1').timepicker();
 $(function() {
-    $('input[name="eventDate"]').daterangepicker({
+    $('input[name="date"]').daterangepicker({
         singleDatePicker: true,
         showDropdowns: true
     }, 

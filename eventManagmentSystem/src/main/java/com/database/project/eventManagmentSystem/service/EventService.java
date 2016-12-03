@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.database.project.eventManagmentSystem.event.Event;
 import com.database.project.eventManagmentSystem.dao.EventDAO;
 import com.database.project.eventManagmentSystem.dao.AttendeeDAO;
+import com.database.project.eventManagmentSystem.dao.OrganizerDAO;
 
 //service class used to coordinate various dao objects and give it to the controller , equivalent of calling from the main method
 
@@ -16,6 +17,7 @@ public class EventService {
 	
 	private EventDAO eventDAO;
 	private AttendeeDAO attendeeDAO;
+	private OrganizerDAO organizerDAO;
 
 	/**
 	 * @param eventDAO the eventDAO to set
@@ -24,10 +26,15 @@ public class EventService {
 	public void setEventDAO(EventDAO eventDAO) {
 		this.eventDAO = eventDAO;
 	}
-	
+
 	@Autowired
 	public void setAttendeeDAO(AttendeeDAO attendeeDAO) {
 		this.attendeeDAO = attendeeDAO;
+	}
+	
+	@Autowired
+	public void setOrganizerDAO(OrganizerDAO organizerDAO) {
+		this.organizerDAO = organizerDAO;
 	}
 
 	
@@ -44,7 +51,17 @@ public class EventService {
 		eventDAO.create(event);
 	}
 	
+	public boolean checkIfOrganizer(int userId) {
+		System.out.println("checkIfOrg"+userId);
+		return organizerDAO.isOrganizer(userId);
+	}
+	
+	public void organizerCreateBeforeCreate(Integer userId) {
+		
+	}
+	
 	public void attendService(Integer event_id, Integer numGuests, Integer userId) {
+		attendeeDAO.makeAttendee(userId);
 		eventDAO.attend(event_id, numGuests, userId);
 	}
 	
@@ -70,6 +87,7 @@ public class EventService {
 	}
 	
 	public List<Event> getOrganizingEvents(Integer userId) {
+		
 		return eventDAO.getOrganizingEvents(userId);
 	}
 	

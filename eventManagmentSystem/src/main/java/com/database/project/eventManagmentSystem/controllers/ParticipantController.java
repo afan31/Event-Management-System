@@ -17,6 +17,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.database.project.eventManagmentSystem.dao.Participant;
+import com.database.project.eventManagmentSystem.dao.Organizer;
+import com.database.project.eventManagmentSystem.event.Event;
+import com.database.project.eventManagmentSystem.event.Music;
+import com.database.project.eventManagmentSystem.event.Sport;
+import com.database.project.eventManagmentSystem.event.Technology;
 import com.database.project.eventManagmentSystem.service.ParticipantService;
 
 @Controller
@@ -38,13 +43,13 @@ public class ParticipantController {
 	 * @return
 	 */
 	@RequestMapping("/participants")
-	public String showParticipants(Model model, HttpSession session) {
+	public String showParticipants(Model model) {
 		
-			List<Participant> participants =  participantService.getCurrent();
-			
-			model.addAttribute("participants", participants);
-			
-			return "participants";
+		List<Participant> participants =  participantService.getCurrent();
+		
+		model.addAttribute("participants", participants);
+		
+		return "participants";
 	}
 	
 	/**
@@ -88,5 +93,16 @@ public class ParticipantController {
 		List<Participant> participants =  participantService.getCurrent();
 		model.addAttribute("participants", participants);
 		return "adminparticipantdeleted";
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	@RequestMapping("/organizercreate")
+	public String createOrganizer(Model model, @Valid Organizer organizer, BindingResult result, HttpSession session) {
+		organizer.setId((Integer)session.getAttribute("userId"));
+		participantService.createOrganizer(organizer);
+		return "createEvent";
 	}
 }

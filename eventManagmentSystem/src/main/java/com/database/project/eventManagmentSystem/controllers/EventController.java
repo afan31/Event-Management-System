@@ -91,9 +91,13 @@ public class EventController {
 	 * @return
 	 */
 	@RequestMapping("/createEvent")
-	public String createOffer() {
-		
-		return "createEvent";
+	public String createOffer(HttpSession session) {
+		//createEvent.jsp
+		System.out.println((Integer)session.getAttribute("userId"));
+		if(eventService.checkIfOrganizer((Integer)session.getAttribute("userId"))) {
+			return "createEvent";
+		}
+		return "organizerSetup";
 	}
 	
 	@RequestMapping("/adminDeleteEvents")
