@@ -57,7 +57,7 @@
 					</c:forEach> 
   				</c:if>
 			</c:forEach>
-			<input type="text" ${containsAttendee eq "1"  ? 'disabled="disabled"' : ''} name="numGuests" placeholder="No of guests..." value="${numGuests}"/>
+			<input type="number" ${containsAttendee eq "1"  ? 'style="display:none;"' : ''} name="numGuests" placeholder="No of guests..." value="${numGuests}"/>
         	<input type="submit" ${containsAttendee eq "1"  ? 'disabled="disabled"' : ''} value = "Attend" class="btn btn-primary" onclick="form.action='${pageContext.request.contextPath}/attendevent';"/>
         	<input type="submit" ${containsProspectiveAttendee eq "1"  ? 'disabled="disabled"' : ''} value = "Interested" class="btn btn-primary" onclick="form.action='${pageContext.request.contextPath}/interested';"/>
         </form>

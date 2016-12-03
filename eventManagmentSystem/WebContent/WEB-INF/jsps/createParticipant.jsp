@@ -27,7 +27,7 @@
 					<label for="example-text-input" class="col-xs-2 col-form-label">Password</label>
 					<div class="col-xs-10">
 					<input type="password" data-minlength="6" name="password" class="form-control" id="participantPassword" placeholder="Password" required>
-				        <div class="help-block">Minimum of 6 characters</div>
+<!-- 				        <div class="help-block">Minimum of 6 characters</div> -->
 				      	</div>
 					</div>
 				<div class="form-group row">
