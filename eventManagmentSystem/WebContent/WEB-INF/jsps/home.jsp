@@ -9,63 +9,76 @@
 <title>Event Management System</title>
 </head>
 <body>
+<div class="container">
+<div class="list-group">
 
 	<c:choose>
 		<c:when test="${sessionScope.userId != null}">
-			<p>
-				Hey <c:out value="${sessionScope.userName}" />, Welcome!
-			</p>
+			<div>
+				<h1>Hey <c:out value="${sessionScope.userName}" />,Welcome!</h1>
+			</div>
 
 			<c:choose>
 				<c:when test="${sessionScope.isAdmin != 0}">
-					<p>
-						<a href="${pageContext.request.contextPath}/participants">Show
+					<div>
+						<a href="${pageContext.request.contextPath}/participants" class="list-group-item">Show
 							current participants</a>
-					</p>
+					<div>
+				</c:when>
+			</c:choose>
+			
+			<c:choose>
+				<c:when test="${sessionScope.isAdmin != 0}">
+					<div>
+						<a href="${pageContext.request.contextPath}/adminDeleteParticipants" class="list-group-item">Delete Participants</a>
+					</div>
 				</c:when>
 			</c:choose>
 
-			<p>
-				<a href="${pageContext.request.contextPath}/events">Show ALL
+			<div>
+				<a href="${pageContext.request.contextPath}/events" class="list-group-item">Show all
 					events</a>
-			</p>
+			</div>
 			
-			<p><a href="${pageContext.request.contextPath}/eventsForAttendee">Events I am attending</a>
+			<c:choose>
+				<c:when test="${sessionScope.isAdmin != 0}">
+					<div>
+						<a href="${pageContext.request.contextPath}/adminDeleteEvents" class="list-group-item">Delete Events</a>
+					</div>
+				</c:when>
+			</c:choose>
+			
+			<div><a href="${pageContext.request.contextPath}/eventsForAttendee" class="list-group-item">Events I am attending</a></div>
 
-			<p><a href="${pageContext.request.contextPath}/eventsOrganizing">Events I am organizing</a>
+			<div><a href="${pageContext.request.contextPath}/eventsOrganizing" class="list-group-item">Events I am organizing</a></div>
 
-			<p>
-				<a href="${pageContext.request.contextPath}/createEvent">Add a
+			<div>
+				<a href="${pageContext.request.contextPath}/createEvent" class="list-group-item">Add a
 					new event</a>
-			</p>
+			</div>
 			
-			<c:choose>
-				<c:when test="${sessionScope.isAdmin != 0}">
-					<p>
-						<a href="${pageContext.request.contextPath}/adminDeleteEvents">Delete Events</a>
-					</p>
-				</c:when>
-			</c:choose>
 			
-			<c:choose>
-				<c:when test="${sessionScope.isAdmin != 0}">
-					<p>
-						<a href="${pageContext.request.contextPath}/adminDeleteParticipants">Delete Participants</a>
-					</p>
-				</c:when>
-			</c:choose>
-
+			
+			
+			</div>
+	<br>
+	<br>
 			<p>
-				<a href="${pageContext.request.contextPath}/logout">Logout</a>
+				<a href="${pageContext.request.contextPath}/logout" class="btn btn-warning">Logout</a>
 			</p>
+			<br>
+	<br>
 		</c:when>
 		<c:otherwise>
 			<p>
-				<a href="${pageContext.request.contextPath}/login">Invalid
-					Credentials, Try Again</a>
+				<h2><a href="${pageContext.request.contextPath}/login">Invalid
+					Credentials, Try Again</a></h2>
 			</p>
 		</c:otherwise>
 	</c:choose>
+</div>
+
+
 
 
 
