@@ -123,7 +123,8 @@ public class EventController {
 		}else{
 			System.out.println("Form is validated");
 		}
-		
+		try
+		{
 		event.setOrganized_by((Integer)session.getAttribute("userId"));
 		eventService.createService(event);
 		List<Integer> eventId = eventService.getEventId(event.getName());
@@ -139,7 +140,10 @@ public class EventController {
 			technology.setId(eventId.get(0));
 			technologyService.createService(technology);
 		}
-		
+		}
+		catch (Exception e) {
+			return "duplicateEvent";
+		}		
 		return "eventCreated";
 	}
 	

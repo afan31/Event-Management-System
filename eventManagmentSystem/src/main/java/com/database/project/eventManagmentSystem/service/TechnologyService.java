@@ -1,5 +1,7 @@
 package com.database.project.eventManagmentSystem.service;
 
+import java.sql.SQLException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +20,7 @@ public class TechnologyService {
 		this.technologyDAO = technologyDAO;
 	}
 
-	public void createService(Technology technology) {
+	public void createService(Technology technology) throws SQLException{
 		technologyDAO.create(technology);
 		
 	}

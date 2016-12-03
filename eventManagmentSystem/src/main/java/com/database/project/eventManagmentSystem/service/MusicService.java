@@ -1,6 +1,8 @@
 package com.database.project.eventManagmentSystem.service;
 
 
+import java.sql.SQLException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +21,7 @@ public class MusicService {
 		this.musicDAO = musicDAO;
 	}
 
-	public void createService(Music music) {
+	public void createService(Music music) throws SQLException{
 		musicDAO.create(music);
 		
 	}

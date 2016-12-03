@@ -1,5 +1,6 @@
 package com.database.project.eventManagmentSystem.service;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +40,7 @@ public class EventService {
 	}
 
 
-	public void createService(Event event) {
+	public void createService(Event event) throws SQLException{
 		eventDAO.create(event);
 	}
 	

@@ -1,5 +1,7 @@
 package com.database.project.eventManagmentSystem.dao;
 
+import java.sql.SQLException;
+
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
@@ -20,7 +22,7 @@ public class TechnologyDAO {
 		this.jdbc = new NamedParameterJdbcTemplate(jdbc);
 	}
 
-	public boolean create(Technology technology){
+	public boolean create(Technology technology) throws SQLException{
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(technology);
 		return jdbc.update("insert into Technology (id, category) values(:id, :category)", params) == 1;
 	}

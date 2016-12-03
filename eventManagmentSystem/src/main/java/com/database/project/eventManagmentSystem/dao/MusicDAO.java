@@ -1,5 +1,7 @@
 package com.database.project.eventManagmentSystem.dao;
 
+import java.sql.SQLException;
+
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
@@ -20,7 +22,7 @@ public class MusicDAO {
 		this.jdbc = new NamedParameterJdbcTemplate(jdbc);
 	}
 
-	public boolean create(Music music){
+	public boolean create(Music music) throws SQLException{
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(music);
 		return jdbc.update("insert into Music (id, genre, artist) values(:id, :genre, :artist)", params) == 1;
 	}
