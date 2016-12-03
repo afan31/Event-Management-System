@@ -5,9 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ include file="boostrap.jsp" %>
-<title>Event interested successful</title>
+<title>Participant deletion successful</title>
 </head>
 <body>
-Event interested <br><a href="${pageContext.request.contextPath}/events">Click here to view all events</a>
+Event deleted <br><a href="${pageContext.request.contextPath}/participants">Show all participants</a>
 </body>
 </html>

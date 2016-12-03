@@ -27,7 +27,7 @@ public class Participant {
 
 	@NotNull(message="Cannot be null")
 	//@Pattern(regexp = "[\\s]*[0-9]*[1-9]+",message="Not a valid zipcode")
-	private int zipcode;
+	private String zipcode;
 
 	private int isAdmin;
 
@@ -37,14 +37,14 @@ public class Participant {
 
 	}
 
-	public Participant(String name, String email, String phone, int zipcode){
+	public Participant(String name, String email, String phone, String zipcode){
 		this.name = name;
 		this.email = email;
 		this.phone = phone;
 		this.zipcode = zipcode;
 	}
 
-	public Participant(int id, String name, String email, String phone, int zipcode){
+	public Participant(int id, String name, String email, String phone, String zipcode){
 		this.id = id;
 		this.name = name;
 		this.email = email;
@@ -118,13 +118,13 @@ public class Participant {
 	/**
 	 * @return the zipcode
 	 */
-	public int getZipcode() {
+	public String getZipcode() {
 		return zipcode;
 	}
 	/**
 	 * @param zipcode the zipcode to set
 	 */
-	public void setZipcode(int zipcode) {
+	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
 

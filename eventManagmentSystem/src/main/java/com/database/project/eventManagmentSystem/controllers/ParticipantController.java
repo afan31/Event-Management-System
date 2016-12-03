@@ -1,5 +1,6 @@
 package com.database.project.eventManagmentSystem.controllers;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpSession;
@@ -12,6 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.database.project.eventManagmentSystem.dao.Participant;
@@ -67,26 +69,32 @@ public class ParticipantController {
 	@RequestMapping(value="/docreate", method=RequestMethod.POST)
 	public String doCreate(Model model, @Valid Participant participant, BindingResult result,
 			HttpSession session) {
-//		if(result.hasErrors()){
-//			System.out.println("Form does not validate");
-//			
-//			List<ObjectError> errors = result.getAllErrors();
-//			
-//			for (ObjectError error: errors) {
-//				System.out.println(error);
-//			}
-//			
-//		}else{
-//			System.out.println("Form is validated");
-//		}
-		//session.removeAttribute("userId");
-		participantService.createService(participant);
-		//int userName = participantService.getParticipantId(participant.getName());
-		session.setAttribute("userId", participant.getId());
-		session.setAttribute("userName", participant.getName());
+		try {
+			participantService.createService(participant);
+			session.setAttribute("userId", participant.getId());
+			session.setAttribute("userName", participant.getName());
+			session.setAttribute("isAdmin", participant.getIsAdmin());
+		} catch (Exception e) {
+			return "duplicateUser";
+		}
 		return "home";
 	}
 	
+	@RequestMapping("/adminDeleteParticipants")
+	public String adminDeleteParticipants(Model model) {
+		List<Participant> participants =  participantService.getCurrent();
+		model.addAttribute("participants", participants);
+		return "admindeleteparticipants";
+	}
+	
+	@RequestMapping(value="/admindeleteparticipant", method=RequestMethod.POST) 
+	public String adminDeleteParticipant(Model model, @RequestParam Integer participant_id) {
+		participantService.deleteParticipant(participant_id);
+		List<Participant> participants =  participantService.getCurrent();
+		model.addAttribute("participants", participants);
+		return "adminparticipantdeleted";
+	}
+
 	/**
 	 * 
 	 * @return

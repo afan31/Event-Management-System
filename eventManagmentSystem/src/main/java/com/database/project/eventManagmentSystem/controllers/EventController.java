@@ -100,6 +100,13 @@ public class EventController {
 		return "organizerSetup";
 	}
 	
+	@RequestMapping("/adminDeleteEvents")
+	public String adminDeleteEvents(Model model) {
+		List<Event> events =  eventService.getCurrent();
+		model.addAttribute("events", events);
+		return "admindeleteevents";
+	}
+	
 	/**
 	 * 
 	 * @return
@@ -179,5 +186,13 @@ public class EventController {
 		List<Event> events =  eventService.getCurrent();
 		model.addAttribute("events", events);
 		return "eventdeleted";
+	}
+	
+	@RequestMapping(value="/admindeleteevent", method=RequestMethod.POST)
+	public String adminDeleteEvent(Model model, @RequestParam Integer event_id) {
+		eventService.deleteEvent(event_id);
+		List<Event> events =  eventService.getCurrent();
+		model.addAttribute("events", events);
+		return "admineventdeleted";
 	}
 }

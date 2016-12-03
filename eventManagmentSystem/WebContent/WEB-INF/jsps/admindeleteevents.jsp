@@ -7,9 +7,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ include file="boostrap.jsp" %>
-<title>Attendee Events</title>
+<title>Admin Delete Events</title>
 </head>
 <body>
+<c:choose>
+				<c:when test="${sessionScope.isAdmin != 0}">
 <div class="container">
 <table class="table">
     <thead>
@@ -19,9 +21,6 @@
         <th>Description</th>
         <th>Address</th>
         <th>Seats</th>
-        <th>Time</th>
-        <th>Date</th>
-        <th>Is Indoor?</th>
       </tr>
     </thead>
     <tbody>
@@ -32,10 +31,14 @@
         <td><c:out value="${event.description}"></c:out></td>
         <td><c:out value="${event.address}"></c:out></td>
         <td><c:out value="${event.total_seats}"></c:out></td>
-        <td><c:out value="${event.time}"></c:out></td>
-        <td><c:out value="${event.date}"></c:out></td>
-        <td><c:out value="${event.isIndoor}"></c:out></td>
-        
+        <td>
+        <div>
+         <form method="post">
+        	<input type="hidden" name="event_id" value="${event.id}"/>
+        	<input type="submit" value = "Delete" class="btn btn-primary" onclick="form.action='${pageContext.request.contextPath}/admindeleteevent';"/>
+        </form> 
+        </div>
+        </td>
         </tr>
 	</c:forEach>
     </tbody>
@@ -43,6 +46,15 @@
 </form>
 <p><a href="${pageContext.request.contextPath}/">Home</a></p>
 	</div>
+	</c:when>
+			  
+			  <c:otherwise>
+			<p>
+				<a href="${pageContext.request.contextPath}/">You don't have the access to delete events, 
+				please go back to the home page</a>
+			</p>
+		</c:otherwise>
+			</c:choose>
 </body>
 
 </html>

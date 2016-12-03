@@ -9,27 +9,37 @@
 <title>Participants</title>
 </head>
 <body>
-<table class="table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Phone</th>
-        <th>Zipcode</th>
-      </tr>
-    </thead>
-    <tbody>
-      <c:forEach var="participant" items="${participants}">
-	    <tr>
-        <td><c:out value="${participant.name}"></c:out></td>
-        <td><c:out value="${participant.email}"></c:out></td>
-        <td><c:out value="${participant.phone}"></c:out></td>
-        <td><c:out value="${participant.zipcode}"></c:out></td>
-        </tr>
-	</c:forEach>
-    </tbody>
-  </table>
-  <p><a href="${pageContext.request.contextPath}/">Home</a></p>
+<c:choose>
+				<c:when test="${sessionScope.isAdmin != 0}">
+			<table class="table">
+			    <thead>
+			      <tr>
+			        <th>Name</th>
+			        <th>Email</th>
+			        <th>Phone</th>
+			        <th>Zipcode</th>
+			      </tr>
+			    </thead>
+			    <tbody>
+			      <c:forEach var="participant" items="${participants}">
+				    <tr>
+			        <td><c:out value="${participant.name}"></c:out></td>
+			        <td><c:out value="${participant.email}"></c:out></td>
+			        <td><c:out value="${participant.phone}"></c:out></td>
+			        <td><c:out value="${participant.zipcode}"></c:out></td>
+			        </tr>
+				</c:forEach>
+			    </tbody>
+			  </table>
+			  </c:when>
+			  
+			  <c:otherwise>
+			<p>
+				<a href="${pageContext.request.contextPath}/">You don't have the access to view all the Participants, 
+				please go back to the home page</a>
+			</p>
+		</c:otherwise>
+			</c:choose>
 
 	
 </body>

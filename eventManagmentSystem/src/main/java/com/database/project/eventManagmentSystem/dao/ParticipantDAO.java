@@ -44,7 +44,7 @@ public class ParticipantDAO {
 				participant.setName(rs.getString(2));
 				participant.setEmail(rs.getString(3));
 				participant.setPhone(rs.getString(4));
-				participant.setZipcode(rs.getInt(5));
+				participant.setZipcode(rs.getString(5));
 				
 				return participant;
 			}
@@ -68,7 +68,7 @@ public class ParticipantDAO {
 				participant.setName(rs.getString(2));
 				participant.setEmail(rs.getString(3));
 				participant.setPhone(rs.getString(4));
-				participant.setZipcode(rs.getInt(5));
+				participant.setZipcode(rs.getString(5));
 				
 				return participant;
 			}
@@ -92,7 +92,7 @@ public class ParticipantDAO {
 				participant.setName(rs.getString(2));
 				participant.setEmail(rs.getString(3));
 				participant.setPhone(rs.getString(4));
-				participant.setZipcode(rs.getInt(5));
+				participant.setZipcode(rs.getString(5));
 				
 				return participant;
 			}
@@ -104,7 +104,7 @@ public class ParticipantDAO {
 	 * @param participant
 	 * @return
 	 */
-	public boolean create(Participant participant){
+	public boolean create(Participant participant) throws SQLException {
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(participant);
 		return jdbc.update("insert into Participant (name,password,email,phone,zipcode) values(:name, :password, :email, :phone, :zipcode)", params) == 1;
 	}

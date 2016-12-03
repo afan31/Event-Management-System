@@ -4,10 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<%@ include file="boostrap.jsp" %>
-<title>Event interested successful</title>
+<title>Duplicate user</title>
 </head>
 <body>
-Event interested <br><a href="${pageContext.request.contextPath}/events">Click here to view all events</a>
+<p> Duplicate user, try logging in <br><a href="${pageContext.request.contextPath}/login">Login</a></p>
 </body>
 </html>
