@@ -10,6 +10,7 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowCountCallbackHandler;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -20,6 +21,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.database.project.eventManagmentSystem.event.Event;
+import com.database.project.eventManagmentSystem.event.Music;
+import com.database.project.eventManagmentSystem.event.Sport;
+import com.database.project.eventManagmentSystem.event.Technology;
 
 @Component("eventDAO")
 public class EventDAO {
@@ -165,5 +169,152 @@ public void deleteEvent(Integer eventId) {
 	params.addValue("eventId", eventId);
 	jdbc.update("delete from Event where id=:eventId", params);
 }
+
+public Event getEventDetails(Integer event_id) {
+	MapSqlParameterSource params = new MapSqlParameterSource();
+	params.addValue("id", event_id);
+	Event event = jdbc.queryForObject("select * from Event where id=:id", params, new RowMapper<Event>() { //wrap this in Prepared Statement later
+
+		public Event mapRow(ResultSet rs, int rowNum) throws SQLException {
+			Event event = new Event();
+			
+			event.setId(rs.getInt(1));
+			event.setName(rs.getString(2));
+			event.setDescription(rs.getString(3));
+			event.setAddress(rs.getString(4));
+			event.setTotal_seats(rs.getInt(5));
+			event.setTime(rs.getString(6));
+			event.setDate(rs.getString(7));
+			event.setIsIndoor(rs.getBoolean(8));
+			return event;
+		}
+	});
+	
+	String sql = "select * from Sport where id=:id";
+	params = new MapSqlParameterSource();
+	params.addValue("id", event.getId());
+	System.out.println(sql);
+	RowCountCallbackHandler countCallback = new RowCountCallbackHandler();
+	jdbc.query(sql,params, countCallback);
+	int rowCountSport = countCallback.getRowCount();
+	
+	sql = "select * from Music where id=:id";
+	params = new MapSqlParameterSource();
+	params.addValue("id", event.getId());
+	System.out.println(sql);
+	countCallback = new RowCountCallbackHandler();
+	jdbc.query(sql,params, countCallback);
+	int rowCountMusic = countCallback.getRowCount();
+	
+	sql = "select * from Technology where id=:id";
+	params = new MapSqlParameterSource();
+	params.addValue("id", event.getId());
+	System.out.println(sql);
+	countCallback = new RowCountCallbackHandler();
+	jdbc.query(sql,params, countCallback);
+	int rowCountTechnology = countCallback.getRowCount();
+	
+	Sport sport = new Sport();
+	Music music;
+	Technology technology;
+	if (rowCountSport > 0) {
+		params = new MapSqlParameterSource();
+		params.addValue("id", event.getId());
+		sport = jdbc.queryForObject("select * from Sport where id = :id", params, new RowMapper<Sport>() {
+
+			public Sport mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Sport sport = new Sport();
+				sport.setGame(rs.getString(2));
+				sport.setEventType("sport");
+				return sport;
+			}
+		});
+		sport.setName(event.getName());
+		sport.setDescription(event.getDescription());
+		sport.setAddress(event.getAddress());
+		sport.setTotal_seats(event.getTotal_seats());
+		sport.setDate(event.getDate());
+		sport.setTime(event.getTime());
+		sport.setIsIndoor(event.getIsIndoor());
+		
+		return sport;
+	} else if (rowCountMusic > 0) {
+		params = new MapSqlParameterSource();
+		params.addValue("id", event.getId());
+		music = jdbc.queryForObject("select * from Music where id = :id", params, new RowMapper<Music>() {
+
+			public Music mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Music music = new Music();
+				music.setGenre(rs.getString(2));
+				music.setArtist(rs.getString(3));
+				music.setEventType("music");
+				return music;
+			}
+		});
+		music.setName(event.getName());
+		music.setDescription(event.getDescription());
+		music.setAddress(event.getAddress());
+		music.setTotal_seats(event.getTotal_seats());
+		music.setDate(event.getDate());
+		music.setTime(event.getTime());
+		music.setIsIndoor(event.getIsIndoor());
+		
+		return music;
+	} else if (rowCountTechnology > 0) {
+		params = new MapSqlParameterSource();
+		params.addValue("id", event.getId());
+		technology = jdbc.queryForObject("select * from Technology where id = :id", params, new RowMapper<Technology>() {
+
+			public Technology mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Technology technology = new Technology();
+				technology.setCategory(rs.getString(2));
+				technology.setEventType("technology");
+				return technology;
+			}
+		});
+		technology.setName(event.getName());
+		technology.setDescription(event.getDescription());
+		technology.setAddress(event.getAddress());
+		technology.setTotal_seats(event.getTotal_seats());
+		technology.setDate(event.getDate());
+		technology.setTime(event.getTime());
+		technology.setIsIndoor(event.getIsIndoor());
+		return technology;
+	}
+	return null;
+}
+
+public void updateEventSport(Sport sport, Event event) {
+	BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(event);
+	BeanPropertySqlParameterSource params2 = new BeanPropertySqlParameterSource(sport);
+	jdbc.update("update Event set name=:name, description=:description, address=:address, total_seats=:total_seats, time=:time, date=:date where id=:id" , params);
+	jdbc.update("update Sport set game=:game", params2);
+}
+
+public void updateEventMusic(Music music, Event event) {
+	BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(event);
+	BeanPropertySqlParameterSource params2 = new BeanPropertySqlParameterSource(music);
+	jdbc.update("update Event set name=:name, description=:description, address=:address, total_seats=:total_seats, time=:time, date=:date where id=:id" , params);
+	jdbc.update("update Music set genre=:genre, artist=:artist", params2);
+}
+
+public void updateEventTechnology(Technology technology, Event event) {
+	BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(event);
+	BeanPropertySqlParameterSource params2 = new BeanPropertySqlParameterSource(technology);
+	jdbc.update("update Event set name=:name, description=:description, address=:address, total_seats=:total_seats, time=:time, date=:date where id=:id" , params);
+	jdbc.update("update Technology set category=:category", params2);	
+}
+
+/**
+ * String sql = "select * from Organizer where id=:id";
+		MapSqlParameterSource params = new MapSqlParameterSource();
+		params.addValue("id", id);
+		System.out.println(sql);
+		RowCountCallbackHandler countCallback = new RowCountCallbackHandler();
+		jdbc.query(sql,params, countCallback);
+		int rowCount = countCallback.getRowCount();
+		System.out.println("Organizer row count: "+rowCount);
+		return rowCount>0;
+ */
 	
 }

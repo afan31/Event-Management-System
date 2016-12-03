@@ -199,4 +199,49 @@ public class EventController {
 		model.addAttribute("events", events);
 		return "admineventdeleted";
 	}
+	
+	@RequestMapping(value="/updateevent", method=RequestMethod.POST)
+	public String updateEvent(Model model, @RequestParam Integer event_id) {
+		Event event = eventService.getEventDetails(event_id);
+		event.setId(event_id);
+		System.out.println("Event id now: "+event_id);
+		System.out.println("from obj"+event.getId());
+		model.addAttribute("event",event);
+		if (event.getEventType().equalsIgnoreCase("sport")) {
+			return "updateeventsport";
+		} else if (event.getEventType().equalsIgnoreCase("music")) {
+			return "updateeventmusic";
+		} else {
+			return "updateeventtechnology";
+		}
+	}
+	
+	@RequestMapping(value="/eventupdatesport", method=RequestMethod.POST)
+	public String updateEventSport(Model model, @Valid Sport sport, @Valid Event event, @RequestParam Integer event_id) {
+		event.setId(event_id);
+		eventService.updateEventSport(sport, event);
+		List<Event> events =  eventService.getCurrent();
+		model.addAttribute("events", events);
+		return "updatesuccessful";
+	}
+	
+	@RequestMapping(value="/eventupdatemusic", method=RequestMethod.POST)
+	public String updateEventSport(Model model, @Valid Music music, @Valid Event event, @RequestParam Integer event_id) {
+		event.setId(event_id);
+		eventService.updateEventMusic(music, event);
+		List<Event> events =  eventService.getCurrent();
+		model.addAttribute("events", events);
+		return "updatesuccessful";
+	}
+	
+	@RequestMapping(value="/eventupdatetechnology", method=RequestMethod.POST)
+	public String updateEventTechnology(Model model, @Valid Technology technology, @Valid Event event, @RequestParam Integer event_id) {
+		event.setId(event_id);
+		System.out.println("categoru now: "+technology.getCategory());
+		eventService.updateEventTechnology(technology, event);
+		List<Event> events =  eventService.getCurrent();
+		model.addAttribute("events", events);
+		return "updatesuccessful";
+	}
+	
 }
