@@ -51,6 +51,7 @@ public class App  {
         			+ " phone varchar(200) not null,"
         			+ " unique(email, phone),"
         			+ " zipcode varchar(5) not null,"
+        			+ " password varchar(50) not null,"
         			+ " isAdmin boolean default false"
         			+ ")");
         	createTables.put("Attendee", "create table Attendee("
@@ -66,6 +67,7 @@ public class App  {
         	createTables.put("Event", "create table Event("
         			+ " id int primary key auto_increment,"
         			+ " name varchar(200) not null,"
+        			+ " unique(name),"
         			+ " description varchar(200) not null,"
         			+ " address varchar(200) not null,"
         			+ " total_seats int not null,"
@@ -95,7 +97,7 @@ public class App  {
         			+ " event_id int not null,"
         			+ " foreign key (event_id) references Event(id) on delete cascade on update cascade,"
         			+ " user_id int not null,"
-        			+ " foreign key (user_id) references Participant(id) on delete cascade on update cascade,"
+        			+ " foreign key (user_id) references Attendee(id) on delete cascade on update cascade,"
         			+ " primary key (event_id, user_id),"
         			+ " noOfGuests int not null"
         			+ ")");

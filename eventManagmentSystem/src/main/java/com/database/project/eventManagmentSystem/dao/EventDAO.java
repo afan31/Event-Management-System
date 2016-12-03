@@ -66,7 +66,7 @@ public class EventDAO {
 	 */
 	public boolean create(Event event) throws SQLException{
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(event);
-		return jdbc.update("insert into Event (name,description,address,total_seats, organized_by) values(:name, :description, :address, :total_seats, :organized_by)", params) == 1;
+		return jdbc.update("insert into Event (name,description,address,total_seats,time,date,isIndoor,organized_by) values(:name, :description, :address, :total_seats, :time, :date, :isIndoor, :organized_by)", params) == 1;
 	}
 	
 	/**
