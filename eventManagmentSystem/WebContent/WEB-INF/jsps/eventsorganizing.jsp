@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="container">
-<h2>Events I am organizing</h2>
+<h2>Events I am Organizing</h2>
 <table class="table">
     <thead>
       <tr>

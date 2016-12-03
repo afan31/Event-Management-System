@@ -28,8 +28,10 @@
         
 </head>
 <body>
-<h2>Login</h2>
+<h2></h2>
 <div class="container">
+	<h2>Login</h2>
+	<h2></h2>
 	<div class="container">
 		<form method="post"
 		onsubmit="return validate();"

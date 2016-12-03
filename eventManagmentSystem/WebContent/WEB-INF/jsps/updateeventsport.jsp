@@ -123,7 +123,7 @@
 					</div>
 				</div>
 				
-					<button type="submit" class="btn btn-primary">Update
+					<button type="submit" class="btn btn-success">Update
 						event</button>
 				</div>
 				</div>
