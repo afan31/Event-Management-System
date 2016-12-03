@@ -13,8 +13,7 @@
 	<c:choose>
 		<c:when test="${sessionScope.userId != null}">
 			<p>
-				Hey 
-				<c:out value="${sessionScope.userName}" />, Welcome!
+				Hey <c:out value="${sessionScope.userName}" />, Welcome!
 			</p>
 
 			<c:choose>

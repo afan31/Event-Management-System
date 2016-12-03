@@ -37,8 +37,8 @@ public class ParticipantService {
 	}
 
 
-	public void createService(Participant participant) throws SQLException {
-		participantDAO.create(participant);
+	public Participant createService(Participant participant) throws SQLException {
+		return participantDAO.create(participant);
 	}
 	
 	public int getParticipantId(String name) {

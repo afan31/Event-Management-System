@@ -8,6 +8,7 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -104,9 +105,20 @@ public class ParticipantDAO {
 	 * @param participant
 	 * @return
 	 */
-	public boolean create(Participant participant) throws SQLException {
+	public Participant create(Participant participant) throws SQLException {
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(participant);
-		return jdbc.update("insert into Participant (name,password,email,phone,zipcode) values(:name, :password, :email, :phone, :zipcode)", params) == 1;
+		jdbc.update("insert into Participant (name,password,email,phone,zipcode) values(:name, :password, :email, :phone, :zipcode)", params);
+		participant = jdbc.queryForObject("select id, name, isAdmin from Participant where email=:email and phone=:phone",params, new RowMapper<Participant>() {
+			
+			public Participant mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Participant p = new Participant();
+				p.setId(rs.getInt(1));
+				p.setName(rs.getString(2));
+				p.setIsAdmin(rs.getInt(3));
+				return p;
+			}
+		});
+		return participant;
 	}
 	
 	/**

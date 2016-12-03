@@ -70,11 +70,12 @@ public class ParticipantController {
 	public String doCreate(Model model, @Valid Participant participant, BindingResult result,
 			HttpSession session) {
 		try {
-			participantService.createService(participant);
+			participant = participantService.createService(participant);
 			session.setAttribute("userId", participant.getId());
 			session.setAttribute("userName", participant.getName());
 			session.setAttribute("isAdmin", participant.getIsAdmin());
 		} catch (Exception e) {
+			e.printStackTrace();
 			return "duplicateUser";
 		}
 		return "home";
