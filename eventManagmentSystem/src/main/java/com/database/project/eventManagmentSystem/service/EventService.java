@@ -6,6 +6,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.database.project.eventManagmentSystem.event.Event;
+import com.database.project.eventManagmentSystem.event.Music;
+import com.database.project.eventManagmentSystem.event.Sport;
+import com.database.project.eventManagmentSystem.event.Technology;
 import com.database.project.eventManagmentSystem.dao.EventDAO;
 import com.database.project.eventManagmentSystem.dao.AttendeeDAO;
 import com.database.project.eventManagmentSystem.dao.OrganizerDAO;
@@ -93,6 +96,23 @@ public class EventService {
 	
 	public void deleteEvent(Integer event_id) {
 		eventDAO.deleteEvent(event_id);
+	}
+
+	public Event getEventDetails(Integer event_id) {
+		return eventDAO.getEventDetails(event_id);
+	}
+
+	public void updateEventSport(Sport sport, Event event) {
+		eventDAO.updateEventSport(sport, event);
+	}
+
+	public void updateEventMusic(Music music, Event event) {
+		eventDAO.updateEventMusic(music, event);		
+	}
+
+	public void updateEventTechnology(Technology technology, Event event) {
+		eventDAO.updateEventTechnology(technology, event);		
+		
 	}
 	
 }

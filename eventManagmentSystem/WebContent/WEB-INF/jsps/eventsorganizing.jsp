@@ -33,6 +33,7 @@
         <div>
          <form method="post">
         	<input type="hidden" name="event_id" value="${event.id}"/>
+        	<input type="submit" value = "Update" class="btn btn-primary" onclick="form.action='${pageContext.request.contextPath}/updateevent';"/>
         	<input type="submit" value = "Delete" class="btn btn-primary" onclick="form.action='${pageContext.request.contextPath}/deleteevent';"/>
         </form> 
         </div>
