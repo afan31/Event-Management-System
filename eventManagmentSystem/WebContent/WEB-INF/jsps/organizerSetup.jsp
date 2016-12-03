@@ -28,7 +28,7 @@
 			<div class="form-group">
 
 				<div class="form-group row">
-					<label for="type" class="col-xs-2 col-form-label">Type</label>
+					<label for="type" class="col-xs-2 col-form-label">Who are you?</label>
 					<div class="col-xs-10">
 						<select name="type" id="organizerType" required>
 							<option value="">Choose one</option>

@@ -41,7 +41,7 @@
 		</c:otherwise>
 			</c:choose>
 
-	
+	<p><a href="${pageContext.request.contextPath}/">Home</a>
 </body>
 
 </html>
