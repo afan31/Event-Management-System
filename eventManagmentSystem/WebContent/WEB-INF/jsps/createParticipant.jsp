@@ -12,6 +12,7 @@
 </head>
 <body>
 	<div class="container">
+	<h2>Create a Participant</h2>
 		<form data-toggle="validator" role="form"
 		method="post"
 			action="${pageContext.request.contextPath}/docreate">

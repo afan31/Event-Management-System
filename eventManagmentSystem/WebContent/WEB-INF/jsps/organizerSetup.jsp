@@ -21,6 +21,11 @@
 <title>Create Event</title>
 </head>
 <body>
+<h2></h2>
+<div class="container">
+
+<h2>Organizer Setup</h2>
+<h2></h2>
 	<div class="container">
 		<form data-toggle="validator" role="form" 
 		method="post"
@@ -51,6 +56,7 @@
 				</div>
 		</form>
 		<p><a href="${pageContext.request.contextPath}/">Home</a></p>
+	</div>
 	</div>
 </body>
 </html>

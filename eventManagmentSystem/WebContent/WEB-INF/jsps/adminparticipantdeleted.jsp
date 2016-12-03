@@ -8,6 +8,8 @@
 <title>Participant deletion successful</title>
 </head>
 <body>
+<div class="container">
 Event deleted <br><a href="${pageContext.request.contextPath}/participants">Show all participants</a>
+</div>
 </body>
 </html>

@@ -13,6 +13,7 @@
 <c:choose>
 				<c:when test="${sessionScope.isAdmin != 0}">
 <div class="container">
+<h2>Delete Events</h2>
 <table class="table">
     <thead>
       <tr>
@@ -35,7 +36,7 @@
         <div>
          <form method="post">
         	<input type="hidden" name="event_id" value="${event.id}"/>
-        	<input type="submit" value = "Delete" class="btn btn-primary" onclick="form.action='${pageContext.request.contextPath}/admindeleteevent';"/>
+        	<input type="submit" value = "Delete" class="btn btn-danger" onclick="form.action='${pageContext.request.contextPath}/admindeleteevent';"/>
         </form> 
         </div>
         </td>
@@ -45,7 +46,7 @@
   </table>
 </form>
 <p><a href="${pageContext.request.contextPath}/">Home</a></p>
-	</div>
+	
 	</c:when>
 			  
 			  <c:otherwise>
@@ -55,6 +56,7 @@
 			</p>
 		</c:otherwise>
 			</c:choose>
+			</div>
 </body>
 
 </html>

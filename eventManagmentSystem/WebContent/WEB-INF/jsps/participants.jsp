@@ -9,6 +9,9 @@
 <title>Participants</title>
 </head>
 <body>
+
+<div class="container">
+<h2>Participants</h2>
 <c:choose>
 				<c:when test="${sessionScope.isAdmin != 0}">
 			<table class="table">
@@ -42,6 +45,8 @@
 			</c:choose>
 
 	<p><a href="${pageContext.request.contextPath}/">Home</a>
+	</p>
+	</div>
 </body>
 
 </html>

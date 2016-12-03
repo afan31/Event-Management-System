@@ -9,11 +9,14 @@
 <title>Admin Delete Participants</title>
 </head>
 <body>
+<div class="container">
+<h2>Delete Participants</h2>
 <c:choose>
 				<c:when test="${sessionScope.isAdmin != 0}">
 <table class="table">
     <thead>
       <tr>
+      	<th>Id</th>
         <th>Name</th>
         <th>Email</th>
         <th>Phone</th>
@@ -32,7 +35,7 @@
         <div>
          <form method="post">
         	<input type="hidden" name="participant_id" value="${participant.id}"/>
-        	<input type="submit" value = "Delete" class="btn btn-primary" onclick="form.action='${pageContext.request.contextPath}/admindeleteparticipant';"/>
+        	<input type="submit" value = "Delete" class="btn btn-danger" onclick="form.action='${pageContext.request.contextPath}/admindeleteparticipant';"/>
         </form> 
         </div>
         </td>
@@ -51,6 +54,7 @@
 			</p>
 		</c:otherwise>
 			</c:choose>
+			</div>
 </body>
 
 </html>

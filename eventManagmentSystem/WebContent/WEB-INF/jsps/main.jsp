@@ -4,10 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<%@ include file="boostrap.jsp"%>
 <title>Event Management System</title>
 </head>
 <body>
-<p><a href="${pageContext.request.contextPath}/login">Login</a></p>
-<p><a href="${pageContext.request.contextPath}/createParticipant">Register</a></p>
+<div class="container">
+<div style="text-align:center;"><h1> Event Management System </h1></div>
+<p><a href="${pageContext.request.contextPath}/login" class="btn btn-primary">Login</a></p>
+<p><a href="${pageContext.request.contextPath}/createParticipant" class="btn btn-success">Register</a></p>
+</div>
 </body>
 </html>

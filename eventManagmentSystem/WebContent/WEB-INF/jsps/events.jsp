@@ -10,7 +10,9 @@
 <title>Events</title>
 </head>
 <body>
+
 <div class="container">
+<h2>Events</h2>
 <table class="table">
     <thead>
       <tr>

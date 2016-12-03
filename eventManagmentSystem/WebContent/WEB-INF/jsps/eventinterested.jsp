@@ -8,6 +8,8 @@
 <title>Event interested successful</title>
 </head>
 <body>
+<div class="container">
 Event interested <br><a href="${pageContext.request.contextPath}/events">Click here to view all events</a>
+</div>
 </body>
 </html>

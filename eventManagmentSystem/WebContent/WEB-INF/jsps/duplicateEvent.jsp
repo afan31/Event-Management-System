@@ -7,6 +7,8 @@
 <title>Duplicate Event</title>
 </head>
 <body>
+<div class="container">
 <p> Event with this name already exists. Please create an event with a different name. <br><a href="${pageContext.request.contextPath}/createEvent">Back</a></p>
+</div>
 </body>
 </html>

@@ -11,6 +11,7 @@
 </head>
 <body>
 <div class="container">
+<h2>Events I am attending</h2>
 <table class="table">
     <thead>
       <tr>

@@ -22,6 +22,7 @@
 </head>
 <body>
 	<div class="container">
+	<h2>Update Event</h2>
 		<form data-toggle="validator" role="form" 
 		method="post"
 			action="${pageContext.request.contextPath}/eventupdatetechnology">

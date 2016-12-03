@@ -28,6 +28,8 @@
         
 </head>
 <body>
+<h2>Login</h2>
+<div class="container">
 	<div class="container">
 		<form method="post"
 		onsubmit="return validate();"
@@ -52,6 +54,7 @@
 					<button type="submit" class="btn btn-primary">Login</button>
 				</div>
 		</form>
+	</div>
 	</div>
 </body>
 </html>

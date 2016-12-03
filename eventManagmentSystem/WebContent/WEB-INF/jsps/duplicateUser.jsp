@@ -7,6 +7,8 @@
 <title>Duplicate user</title>
 </head>
 <body>
+<div class="container">
 <p> Duplicate user, try logging in <br><a href="${pageContext.request.contextPath}/login">Login</a></p>
+</div>
 </body>
 </html>

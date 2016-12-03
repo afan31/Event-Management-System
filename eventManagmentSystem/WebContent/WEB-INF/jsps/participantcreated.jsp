@@ -5,9 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ include file="boostrap.jsp" %>
-<title>IParticipant creation successful</title>
+<title>Participant creation successful</title>
 </head>
 <body>
+<div class="container">
 Participant created <br><a href="${pageContext.request.contextPath}/participants">Click here to view current participants</a>
+</div>
 </body>
 </html>
